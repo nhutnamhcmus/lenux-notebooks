@@ -41,7 +41,7 @@ Một đồ thị hữu hướng được gán nhãn (DLG) bao gồm các nút (
 
 Tổng quát hơn, cho một tập các nút N, và một tập các nhãn L, một đồ thị tri thức là một tập hợp con của tích hữu hướng N x L x N. Mỗi thành phần trong tập này được gọi là một bộ ba và có thể trực quan như sau:
 
-![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowled-graph/media/image1.png)
+![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowledge-graph/media/image1.png)
 
 Biểu diễn đồ thị hữu hướng thường được sử dụng trong nhiều cách khác nhau phụ thuộc vào nhu cầu của ứng dụng. Một đồ thị hữu hướng như tập các node biểu diễn con người, và các cạnh liên kết thể hiện mối quan hệ tình bạn giữa họ còn được gọi là một dữ liệu đồ thị. Một đồ thị hữu hướng mà những node là những lớp đối tượng (sách, báo, …) và những cạnh liên kết thể hiện mối quan hệ lớp con có thể hiểu là một phân loại học (taxonomy). Trong một số mô hình dữ liệu, A được gọi là chủ thể (subject), B được gọi là thuộc tính (predicate), và C được gọi là đối tượng (object).
 
@@ -123,11 +123,11 @@ Chúng ta có thể rút trích những thực thể Albert Einstein, Germany, T
 
 Khi đoạn trích này của đồ thị tri thức được kết hợp vào một đồ thị tri thức lớn hơn, chúng ta sẽ nhận được các liên kết bổ sung (được hiển thị bằng các cạnh chấm chấm), chẳng hạn như Nhà vật lý lý Thuyết (Theoretical Physicist) là một loại Nhà vật lý (Physictist), nghiên cứu Vật lý và Lý Thuyết Tương Đối (Theory of Relativity) là một nhánh của Vật lý.
 
-![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowled-graph/media/image2.png)
+![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowledge-graph/media/image2.png)
 
 Thị giác máy tính (Nguyên văn: A holy grail of Computer vision, :))chén thánh này vjp pro quá mình cũng khum biết nói sao, hj\!) là sự hiểu biết về hình ảnh, hình thành một mô hình, mà có thể định danh, nhận diện vật thể (detect objects), mô tả thuộc tính (attributes) của chúng, và nhận dạng quan hệ của chúng. Sự hiểu biến về khung cảnh thế giới cho cho phép các ứng dụng quan trọng như tìm kiếm hình ảnh (image search), trả lời câu hỏi (question answering) và tương tác với robot (robotic interactions). Nhiều tiến bộ đã đạt được trong những năm gần đây hướng tới mục tiêu này, bao gồm phân loại hình ảnh (image classification) và phát hiện đối tượng (object detection).
 
-![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowled-graph/media/image3.png)
+![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowledge-graph/media/image3.png)
 
 Lấy ví dụ, từ một ảnh phía trên, một hệ thống tri thức hình ảnh nên tổ chức một đồ thị tri thức như phía bên phải. Các nút (node) trong đồ thị tri thức là đầu ra của một bộ phát hiện đối tượng. Những nghiên cứu gần đây trong Thị giác máy tính đang tập trung vào phát triển những kỹ thuật có thể dự đoán chính xác mối quan hệ giữa những đối tượng, ví dụ như, người đàn ông kia đang cần một cái xô, và chú ngựa đang ăn từ cái xô đó, … Đồ thị tri thức ở bên phải là một ví dụ của một đồ thị tri thức (tui hơi lú rồi)
 
