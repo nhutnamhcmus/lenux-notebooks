@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>What Are Some Knowledge Graph Data Models | Lenux Notebooks</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="What Are Some Knowledge Graph Data Models" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH" />
+<meta property="og:description" content="ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH" />
+<link rel="canonical" href="https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/what-are-some-knowledge-graph-data-models.html" />
+<meta property="og:url" content="https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/what-are-some-knowledge-graph-data-models.html" />
+<meta property="og:site_name" content="Lenux Notebooks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-26T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/what-are-some-knowledge-graph-data-models.html","@type":"BlogPosting","headline":"What Are Some Knowledge Graph Data Models","dateModified":"2021-06-26T00:00:00-05:00","datePublished":"2021-06-26T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/what-are-some-knowledge-graph-data-models.html"},"description":"ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/lenux-notebooks/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nhutnamhcmus.github.io/lenux-notebooks/feed.xml" title="Lenux Notebooks" /><link rel="shortcut icon" type="image/x-icon" href="/lenux-notebooks/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/lenux-notebooks/">Lenux Notebooks</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/lenux-notebooks/about/">About Me</a><a class="page-link" href="/lenux-notebooks/search/">Search</a><a class="page-link" href="/lenux-notebooks/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What Are Some Knowledge Graph Data Models</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-26T00:00:00-05:00" itemprop="datePublished">
+        Jun 26, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      25 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Đây là bản dịch từ Course CS520: Knowledge Graphs</td>
+      <td>Data Models, Knowledge Acquisition, Inference and Applications</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Department of Computer Science, Stanford University, Spring 2021</p>
+
+<p>Knowledge graphs have emerged as a compelling abstraction for organizing world’s structured knowledge over the internet, capturing relationships among key entities of interest to enterprises, and a way to integrate information extracted from multiple data sources. Knowledge graphs have also started to play a central role in machine learning and natural language processing as a method to incorporate world knowledge, as a target knowledge representation for extracted knowledge, and for explaining what is being learned. This class is a graduate level research seminar and will include lectures on knowledge graph topics (e.g., data models, creation, inference, access) and invited lectures from prominent researchers and industry practitioners. The seminar emphasizes synthesis of AI, database systems and HCI in creating integrated intelligent systems centered around knowledge graphs.</p>
+
+<p>Mục đích: Là tìm hiểu cũng như trau dồi kiến thức chuyên môn trong lĩnh vực Knowledge Graph cũng như từ vựng tiếng Anh. Không vì mục đích kinh doanh hay bất cứ mục đích về lợi nhuận, tất cả là vì mục đích chia sẻ kiến thức và học tập.</p>
+
+<p>Mọi thông tin về những chủ đề được note lại có thể tìm thấy ở đây:</p>
+
+<p>https://web.stanford.edu/class/cs520/2020/notes/Table_Of_Contents.html</p>
+
+<p>Video của các buổi seminar cũng được công khai trên địa chỉ Youtube:</p>
+
+<p>https://www.youtube.com/playlist?list=PLDhh0lALedc5paY4N3NRZ3j_ui9foL7Qc</p>
+
+<p>Mọi vấn đề về dịch thuật, thuật ngữ xin để lại comment hoặc gửi về địa chỉ email: lenam.fithcmus@gmail.com với tiêu đề</p>
+
+<p>[ISSUES OF KG TRANSLATION]</p>
+
+<p><strong>WHAT ARE SOME GRAPH DATA MODELS?</strong></p>
+
+<p><strong>1. Giới thiệu</strong></p>
+
+<p>Hai mô hình dữ liệu đồ thị phổ biến là mô hình Resource Description Framework (RDF) và mô hình Property Graph (PG). Ngôn ngữ truy vấn cho RDF là SPARQL, và ngôn ngữ truy vấn cho mô hình Property Graph là Cypher.</p>
+
+<p>Trong chương này, chúng ta sẽ trình bày một cách tổng quan bình thường cả hai mô hình dữ liệu và cho những ví dụ truy vấn với chúng. Chúng ta xem xét chuyển đổi biểu diễn dữ liệu bằng một trong các mô hình sang biểu diễn dữ liệu bằng mô hình khác, và cũng so sánh những dữ liệu đồ thị này bằng cách dùng mối quan hệ mô hình dữ liệu thông thường.</p>
+
+<p><strong>2. Resource Description Frame - Khung mô tả tài nguyên</strong></p>
+
+<p>RDF (Resource Description Frame - Khung mô tả tài nguyên) là một khung (framework) cho việc biểu diễn thông tin (representation information) trên web. Mô hình dữ liệu RDF (RDF Data Model) và ngôn ngữ truy vấn của nó SPARQL được chuẩn hoá bởi World Wide Web Consortium</p>
+
+<p><strong>2.1 RDF Data Model - Mô hình dữ liệu RDF</strong></p>
+
+<p>Một bộ ba RDF, thành phân cơ sở của biểu diễn trong mô hình này, bao gồm một chủ thể (subject), một thuộc tính (predicate) và một đối tượng (object). Một tập bộ ba như vậy được gọi là đồ thị RDF (RDF Graph). Chúng ta có thể trực quan hoá một bộ ba RDF như một node và một cạnh liên kết có hướng, mà mỗi bộ ba như vậy biểu diễn một đồ thị node-edge-node (nút-cạnh-nút)</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image1.png" alt="" /></p>
+
+<p>Có thể chia thành ba loại node:</p>
+
+<p>- IRIs - Internationalized Resource Identifier: được sử dụng để xác định duy nhất những tài nguyên trên web</p>
+
+<p>- literals: là một giá trị của một kiểu dữ liệu xác định, ví dụ như: string – chuỗi, integer - số nguyên, …</p>
+
+<p>- Blanks nodes: Là một node mà không có bộ định danh, và tương tự như một ẩn danh (anonmyous) hoặc một biến giá trị tồn tại (existential variable)</p>
+
+<p>Một ví dụ minh hoạ của biểu diễn thông tin sử dụng RDF, chúng ta lấy ví dụ biểu diễn tri thức quan hệ giữa con người. Trong ví dụ này, một người với tên art, được đại diên bởi IRI <a href="http://example.org/art">http://example.org/art</a>. Trong định nghĩa sử dụng IRIs dưới đây có thể được viết tắt bởi một tiền tố.Ví dụ như, chúng ta định nghĩa foaf như một tiền tố cho &lt;&lt;http://xmlns.com/foaf/0.1/&gt;&gt;. Quan hệ tri thức (knows) được định nghĩa bởi IRI http://xmlns.com/foaf/0.1/knows</p>
+
+<p>@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt;</p>
+
+<p>@prefix ex: &lt;http://example.org/&gt;</p>
+
+<p>ex:art foaf:knows ex:bob</p>
+
+<p>ex:art foaf:knows ex:bea</p>
+
+<p>ex:bob foaf:knows ex:cal</p>
+
+<p>ex:bob foaf:knows ex:cam</p>
+
+<p>ex:bea foaf:knows ex:coe</p>
+
+<p>ex:bea foaf:knows ex:cory</p>
+
+<p>ex:bea foaf:age 23</p>
+
+<p>ex:bea foaf:based_near _:o1</p>
+
+<p>Hai bộ ba minh hoạ cuối cùng, một nút tầm thường (literal node) và một nút trống (blank node).Giá trị của foaf:age là một số nguyên 23, một ví dụ về một literal. Một chuỗi là một kiểu dữ liệu tầm thường phổ biến khác. Giá trị của foaf:based_near là một không gian ẩn danh mà được biểu thị bởi dấu gạch dưới (underscore) như một nút định danh. o1 ở đây là một dữ liệu định danh nổi bộ không có ý nghĩa, nằm bên ngoài ngữ cảnh của đồ thị hiện tại.</p>
+
+<p>Bộ từ vựng RDF là một bộ sưu tập (collection) của những IRI dự định sử dụng trong đồ thị RDF (RDF Graph). IRIs trong bộ từ vựng RDF thường bắt đầu với một chuỗi con chung gọi là một namespace (không gian tên) IRI. Trong ví dụ ở trên, &lt;&lt;http://xmlns.com/foaf/0.1/&gt;&gt; là một không gian tên tiền tố (namespace prefix). Trong một vài không gian tên (namespace), IRIs được liên kết theo quy ước với một tên ngắn được gọi là tiền tố không gian tên (namespace prefix). Trong ví dụ bên trên, chúng ta định nghĩa foaf và ex như tiền tố không gian tên (namespace prefix)</p>
+
+<p>Đồ thị RDF (RDF Graphs) mang tính chất hữu cơ theo nghĩa là chúng cung cấp một bức tranh tổng quan dữ liệu tĩnh. Với phần mở rộng từ vựng phù hợp, chúng có thể diễn đạt thông tin về các sự kiện hoặc các thuộc tính động khác của các thực thể.</p>
+
+<p>Một kho dữ liệu RDF (RDF Dataset) là một tập của nhiều đồ thị RDF (RDF Graphs) và bao gồm chính xác một đồ thị mặc định có thể để trống và không cần đặt tên và một hoặc nhiều đồ thị được đặt tên. Mỗi đồ thị được đặt tên bao gồm một IRI hoặc một nút trống thể hiện tên của nó và đồ thị RDF.</p>
+
+<p><strong>2.2 SPARQL Query Language - Ngôn ngữ truy vấn SPARQL</strong></p>
+
+<p>SPARQL (đọc là “sparkle” :v xờ pắc kơ le), viết tắt của SIMPle Protocol and RDF Query Language) là một ngôn ngữ truy vấn để truy xuất và thao tác dữ liệu được lưu trữ trong Resource Description Framework (RDF). SPARQL thể được sử dụng để thể hiện các truy vấn trên nhiều nguồn dữ liệu khác nhau, cho dù dữ liệu được lưu trữ nguyên bản dưới dạng RDF hay được xem dưới dạng RDF thông qua phần mềm trung gian. SPARQL chứa các khả năng truy vấn bắt buộc và tuỳ chọn mẫu đồ thị (graph patterns) với liên kết (conjunctions) và phi liên kết (disconjuntions) của chúng. SPARQL cũng hỗ trợ mở rộng truy vấn giá trị kiểm tra và ràng buộc bởi nguồn đồ thị RDF. Kết quả của truy vấn SPARQL có thể là các tập hợp hoặc những đồ thị RDF (RDF Graphs)</p>
+
+<p>Hầu hết dạng của một truy vấn SPARQL bao gồm một tập bộ ba mẫu (a set of triple patterns) được gọi là một mẫu đồ thị cơ sở (a basic graph pattern). Bộ ba mẫu giống như bộ ba RDF ngoại trừ rằng mỗi chủ thể (subject), thuộc tính (predicate) và đối tượng (object) có thể là một biến (variable). Một mẫu đồ thị cơ sở (Basic Graph Pattern) khớp với một đồ thị con (Subgraph) của dữ liệu RDF khi những thuật ngữ RDF từ đồ thị con đó có thể được thay thế cho các biến trong mẫu đồ thị (graph patterns) và kết quả là đồ thị RDF tương dương với đồ thị con.</p>
+
+<p>Ví dụ dưới đây cho thấy một truy vấn SPARQL dựa trên dữ liệu đồ thị được hiển thị ở trên và các truy vấn tri thức con người bởi một người. Truy vấn bao gồm hai phần: mệnh đề SELECT xác định các biến sẽ xuất hiện trong kết quả truy vấn và mệnh đề WHERE cung cấp mẫu biểu đồ để khớp với biểu đồ dữ liệu. Mẫu đồ thị trong ví dụ này bao gồm một bộ ba duy nhất với một biến duy nhất (? Người) ở vị trí đối tượng.</p>
+
+<p>SELECT ?person</p>
+
+<p>WHERE</p>
+
+<p>&lt;http://example.org/art&gt; &lt;http://xmlns.com/foaf/0.1/knows&gt; ?person</p>
+
+<p>Câu truy vấn trả về tập kết quả trên dữ liệu đồ thị của chúng ta</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>?person1</td>
+    </tr>
+    <tr>
+      <td>&lt;http://example.org/bob&gt;</td>
+    </tr>
+    <tr>
+      <td>&lt;http://example.org/bea&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mẫu đồ thị (Graph Pattern) có thể chứa nhiều bộ ba. Lấy ví dụ như câu truy vấn sau, chúng ta hỏi những bạn của bạn của art (art’s friends of friends)</p>
+
+<p>SELECT ?person ?person1</p>
+
+<p>WHERE</p>
+
+<p>&lt;http://example.org/art&gt; &lt;http://xmlns.com/foaf/0.1/knows&gt; ?person</p>
+
+<p>?person &lt;http://xmlns.com/foaf/0.1/knows&gt; ?person1</p>
+
+<p>Câu truy vấn trả về tập kết quả trên dữ liệu đồ thị của chúng ta</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>?person1</td>
+      <td>?person2</td>
+    </tr>
+    <tr>
+      <td>&lt;http://example.org/bob&gt;</td>
+      <td>&lt;http://example.org/cal&gt;</td>
+    </tr>
+    <tr>
+      <td>&lt;http://example.org/bob&gt;</td>
+      <td>&lt;http://example.org/cam&gt;</td>
+    </tr>
+    <tr>
+      <td>&lt;http://example.org/bea&gt;</td>
+      <td>&lt;http://example.org/coe&gt;</td>
+    </tr>
+    <tr>
+      <td>&lt;http://example.org/bea&gt;</td>
+      <td>&lt;http://example.org/cory&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mỗi lời giải đưa ra một cách trong đó các biến đã chọn có thể được liên kết với các thuật ngữ RDF để mẫu truy vấn khớp với dữ liệu. Tập hợp kết quả đưa ra tất cả các lời giải khả thi. Trong ví dụ trên, hai tập hợp con dữ liệu khác nhau cung cấp các kết quả phù hợp dẫn đến các câu trả lời. Các ví dụ trên minh họa khớp mẫu đồ thị cơ bản; tất cả các biến được sử dụng trong mẫu truy vấn phải được ràng buộc trong mọi lời giải.</p>
+
+<p>Truy vấn SPARQL có thể trả về những node trống (Blank Nodes) trong kết quả. Định danh cho những node trống (Blank Nodes) được dùng trong kết quả có thể không giống như định danh sử dụng trong đồ thị RDF gốc. Lớp WHERE trong một truy vấn SPARQL cung cấp một cách khớp dựa trên những kiểu tầm thường và để lọc những kết quả dựa trên những ràng buộc số học.</p>
+
+<p>Các câu truy vấn SPARQL có rất nhiều dạng. Dạng mệnh đề SELECT mà chúng ta xem xét đến bây giờ trả về những biến ràng buộc. Dạng mệnh đề CONSTRUCT có thể được dùng trong khởi tạo những kết quả mà định nghĩa một đồ thị RDF (RDF Graph). Những câu truy vấn cũng có thể chỉ định nhiều hơn một mẫu đồ thị (graph pattern) mà tất cả chúng hoặc một vài trong chúng phải khớp với dữ liệu RDF. Những kết quả truy vấn cũng có thể được xử lý thêm bằng cách cung cấp một cách trực tiếp các lệnh để sắp xếp chúng, loại bỏ trùng lặp kết quả, hoặc giới hạn số lượng các kết quả được trả về.</p>
+
+<p><strong>3. Property Graphs - Đồ thị thuộc tính</strong></p>
+
+<p>Mô hình dữ liệu thuộc tính được sử dụng bởi nhiều hệ thống cơ sở dữ liệu đồ thị. Không giống như RDF được thúc đẩy bởi nhu cầu mô hình hoá thông tin dữ liệu trên web, hệ thống sơ cở dữ liệu xử lý dữ liệu đồ thị tổng quát. Những hệ thống cơ sở dữ liệu đồ thị (Graph Database Systems) tách biệt bản thân chúng với cơ sở dữ liệu quan hệ truyền thống (Traditional Relational Databases) với sự phụ rất ít vào một lược đồ được định nghĩa từ trước, và tối ưu sự vận hành nhờ vào duyệt đồ thị (Graph Traversals). Trong mục này, chúng ta sẽ xem xét mô hình dữ liệu đồ thị thuộc tính và ngôn ngữ Cypher được dùng để truy vấn nó.</p>
+
+<p><strong>3.1 Mô hình dữ liệu đồ thị thuộc tính (Property Graph Data Model)</strong></p>
+
+<p>Một mô hình dữ liệu đồ thị thuộc tính (Property Graph Data Model) bao gồm các nút (node), những mối quan hệ (relationships) và những thuộc tính (properties). Mỗi một nút có một nhãn và một tập các thuộc tính dưới dạng bất kỳ những cặp key-value. Các key là những chuỗi (string) và các value là kiểu dữ liệu bất kỳ. Một quan hệ là một cạnh liên kết có hướng giữa hai node (nút), có một nhãn và có thể có một tập các thuộc tính.</p>
+
+<p>Trong đồ thị thuộc tính sau đây art và bea là hai node. Node cho bea có hai thuộc tính: age và based_near. Hai nút (node) được nối bằng một cạnh liên kết với nhãn là knows. Cạnh liên kết này có thuộc tính since chỉ năm mà art và bea quen biết nhau</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image2.png" alt="" /></p>
+
+<p>Trong lúc định nghĩa một thuộc mô hình dữ liệu đồ thị thuộc tính, chúng ta phải quyết định những nút (nodes), những cạnh liên kết (edges) và những thuộc tính (properties). Ví dụ như chúng ta có thể hỏi tại sao không biểu diễn một thành phố như một nút, và khởi tạo một nhãn based_near giữa một người (a person) và một thành phố (a city) thay vì tạo ra một thuộc tính của một nút biểu diễn một người. Một cách tổng quát, bất kỳ giá trị nào có liên hệ với nhiều nút (nodes) khác trong một đồ thị sao cho có yêu cầu ứng dụng để duyệt trên các mối quan quan hệ đó một cách hiệu quả, hoặc chúng cần liên kết các thuộc tính bổ sung với cách nó liên hệ với những nút khác, bản thân nó nên được biểu diẽn như một nút.</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image3.png" alt="" /></p>
+
+<p><strong>3.2 Cypher Query Language</strong></p>
+
+<p>Cypher là một ngôn ngữ dùng trong truy vấn dữ liệu được biểu diễn trong một mô hình dữ liệu đồ thị thuộc tính. Những khái niệm thiết kế từ Cypher đang được xem xét để trở thành một chuẩn ISO cho một ngôn ngữ truy vấn đồ thị. Ngoài việc truy vấn, Cypher cũng có thể được sử dụng để khởi tạo (create), cập nhật (update) và loại bỏ (delete) dữ liệu từ một cơ sở dữ liệu đồ thị. Trong phần này, chúng ta sẽ điểm qua một vài khả năng truy vấn của Cypher</p>
+
+<p>Ví dụ sau đây về truy vấn Cypher dựa trên dữ liệu đồ thị được đề cập từ đầu và những truy vấn cho những người được quen biết bởi art. Câu truy vấn gồm hai phần: mệnh đề MATCH chỉ định một mẫu đồ thị (graph patterns) mà nên khớp dựa trên dữ liệu đồ thị và mệnh đề RETURN chỉ định câu truy vấn nên trả về cái gì. Mẫu đồ thị (graph pattern) được chỉ định trong định nghĩa ASCII cho đồ thị: Mỗi một nút được viết trong dấu ngoặc đơn (parentheses) và mỗi một cạnh liên kết được viết bởi một dấu mũi tên (arrow). Cả thông số nút (node) và quan hệ (relation) đều bao gồm các kiểu tương ứng của chúng và bất kỳ thuộc tính bổ sung nào cần được đối sánh.</p>
+
+<p>MATCH (p1:Person {name: art}) -[:knows]-&gt; (p2: Person)</p>
+
+<p>RETURN p2</p>
+
+<p>Ví dụ dưới đây, chúng ta thấy cách mà Cypher truy vấn với câu hỏi cho tất cả những người bạn của một người biết nhau từ năm 2010</p>
+
+<p>MATCH (p1:Person {name:art}) -[:knows {since: 2010}]-&gt; (p2: Person)</p>
+
+<p>RETURN p2</p>
+
+<p>Từ câu truy vấn ở trên, chúng ta có thể thấy việc liên kết các thuộc tính với những quan hệ cũng dễ dàng như liên kết chúng với các nút. Một người có thể có nhiều người bạn từ những năm trước 2010, và nếu chúng ta muốn truy vấn bao gồm những người bạn đó, chúng ta có thể thêm một mệnh đề WHERE</p>
+
+<p>MATCH (p1:Person {name:art}) -[:knows {since: Y}]-&gt; (p2: Person)</p>
+
+<p>WHERE Y &lt;= 2010</p>
+
+<p>RETURN p2</p>
+
+<p>Thông qua mệnh đề WHERE, có thể chỉ định nhiều ràng buộc bộ lọc giống như các mẫu có thể sử dụng để giới hạn các kết quả truy vấn. Hơn nữa,Cypher cung cấp cấu trúc ngôn ngữ cho việc đếm các kết quả (counting results), gom nhóm dữ liệu bởi những giá trị (grouping data by values), tìm giá trị cực đại/ cực tiểu (minimum/ maximum values) và một số toán tử toán học khác.</p>
+
+<p><strong>4. Comparison of Data Models - So sánh các mô hình dữ liệu</strong></p>
+
+<p>Trong mục này, chúng ta sẽ bắt đầu so sánh RDF và mô hình dữ liệu đồ thị thuộc tính. Chúng ta cũng sẽ so sánh cả hai thứ này với mô hình dữ liệu quan hệ.</p>
+
+<p><strong>4.1 Comparison of RDF and Property Graph Data Models</strong></p>
+
+<p>Ngoài các đặc trưng của RDF được đề cập trong những mục trước, nó có nhiều tầng (layers) bổ sung, ví dụ như lược đồ RDF, Web Ontology Language (OWL),… Trong phần này, chúng ta không cần phải đề cập đến những đặc trưng cao cấp này.</p>
+
+<p>Những điểm chính khác biệt giữa mô hình RDF cơ bản và mô hình dữ liệu đồ thị thuộc tính (Property Graph Model)</p>
+
+<p>- Mô hình dữ liệu đồ thị thuộc tính (Property Graph Model) cho phép những cạnh liên kết có những thuộc tính</p>
+
+<p>- Mô hình dữ liệu đồ thị thuộc tính (Property Graph Model) không yêu cầu IRIs và không hỗ trợ những node trống (blank node).</p>
+
+<p>Để hỗ trợ thuộc tính cạnh, mô hình RDF hỗ trợ một mở rộng (extension) gọi là reification. Chúng ta sẽ đề cập phần mở rộng (extension) này và sau đó mô tả các cách khác nhau mà dữ liệu được biểu diễn trong mô hình dữ liệu này có thể được chuyển đổi (convert) sang một dạng khác.</p>
+
+<p>Để hiểu sự tái tổ chức - reification trong RDF, xem xét một tình huống mà chúng ta cần biểu diễn nguồn gốc của một bộ ba sau đây. Bộ ba này xác nhận trọng lượng của một mặt hàng. Chữ “2,4” ^^ xsd: decimal biểu thị số 2,4 thuộc kiểu xsd: decimal. Chúng ta quan tâm đến người chỉ định thức hiện phép đo này</p>
+
+<p>exproducts:item10245 exterms:weight “2.4”^^xsd:decimal</p>
+
+<p>Chúng ta có thể liên kết những thông tin xuất xứ với bộ ba phía trên bằng cách dùng từ vựng RDF reification. Từ vựng RDF reification bao gồm kiểu rdf:Statement, thuộc tính rdf:subject, rdf:predicate và rdf:object. Bẳng cách bộ từ vựng reification, một tái tổ chức của một mệnh đề về trọng lượng của một mặt hàng nên được cho bởi phép gán mệnh đề IRI giống như exproducts:triple12345 (vì vậy các câu lệnh có thể được viết mô tả nó), và sau đó mô tả mệnh đề như bên dưới đây. Bộ ba cuối cùng trong danh sách chỉ định thông tin xuất xứ mong muốn bằng cách xác nhận số nhận dạng cho người đã tạo bộ ba ban đầu.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>exproducts:triple12345 rdf:type rdf:Statement .</td>
+    </tr>
+    <tr>
+      <td>exproducts:triple12345 rdf:subject exproducts:item10245 .</td>
+    </tr>
+    <tr>
+      <td>exproducts:triple12345 rdf:predicate exterms:weight .</td>
+    </tr>
+    <tr>
+      <td>exproducts:triple12345 rdf:object “2.4”^^xsd:decimal .</td>
+    </tr>
+    <tr>
+      <td>exproducts:triple12345 dc:creator exstaff:85740 .</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Những mệnh đề này nói rằng tài nguyên được định danh bởi IRI exproducts:triple12345 là một mệnh đề RDF, mà chủ thể của mệnh đề tham chiếu đến tài nguyên được định danh bởi exterms:weight và đối tượng của mệnh đề tham chiều tới giá trị thập phân được định danh bởi kiểu của chữ “2.4” ^^xsd:decimal. Cuối cùng mệnh đề xác nhận rằng exproducts:triple12345 được cung cấp bởi người với IRI là exstaff:8574</p>
+
+<p>Với từ vựng tái tổ chức, nó có thể dịch một cách máy móc dữ liệu trong mô hình đồ thị thuộc tính sang RDF. Mỗi node và giá trị thuộc tính của nó trong dữ liệu đồ thị thuộc tính trở thành một bộ ba. Mỗi cạnh liên kết trong dữ liệu đồ thị thuộc tính cũng trở thành một bộ ba RDF. Mọi cạnh liên kết trong dữ liệu đồ thị thuộc tính có thuộc tính được tái tổ chức, và những thuộc tính của cạnh liên kết trở thành bộ ba của cạnh được tái tổ chức bằng cách sử dụng từ vựng tái tổ chức như giải thích bên trên :v</p>
+
+<p>Để dịch dữ liệu được biểu diễn trong mô hình RDF sang mô hình đồ thị thuộc tính, cách tiếp cận dễ dàng nhất là ánh xạ mỗi node và mỗi cạnh tương ứng với node và một cạnh trong đồ thị thuộc tính. Một tái tổ chức khả thi là chúng ta chỉ tạo các nút thuộc tính mới cho những nút là IRI hoặc nút trống. Với bất kỳ một bộ ba nào trong RDF mà mục tiêu là chữ (literal), chúng ta tạo cho chúng một thuộc tính của node trong dữ liệu đồ thị thuộc tính.</p>
+
+<p>Ngoài ra để chuyển đổi dữ liệu giữa các mô hình RDF và đồ thị thuộc tính, chúng ta cũng quan tâm đến chuyển đổi hình thức cú pháp của dữ liệu và các câu truy vấn. Với mô hình dữ đồ thị thuộc tính, không có một chuẩn cú pháp cho những biểu thức, do vậy một trình dịch tùy chỉnh cần được viết cho định dạng mà người đó đang làm việc với. Một lần dịch lược đồ là cố định giữa hai mô hình, nên dịch giữa SPARQL và Cypher cũng đơn giản.</p>
+
+<p><strong>4.2 Comparison of Graph Models and Relational Data Model - So sánh mô hình đồ thị và mô hình dữ liệu quan hệ</strong></p>
+
+<p>Chúng ta có thể định nghĩa một phép dịch và và từ dữ liệu được thể hiện bằng cách sử dụng mô hình dữ liệu quan hệ sang dữ liệu được thể hiện bằng cách sử dụng mô hình RDF và mô hình đồ thị thuộc tính. Một số ý kiến rằng các mô hình đồ thị thì dễ dàng hiểu hơn đối với con người và các ngôn ngữ truy vấn đồ thị thì gọn hơn với những những truy vấn xác định. Về nguyên tắc, chúng ta có thể cài đặt một một giao diện người dùng để trực quan hoá lược đồ quan hệ, và cài đặt trình biên dịch truy vấn mà có thể ánh xạ câu truy vấn được viết bằng ngôn ngữ truy vấn đồ thị thành một dạng tương đương mà có thể thực hiện trên những bảng quan hệ. Nếu một ứng dụng yêu cầu điều hướng mối quan hệ, một cơ sở dữ liệu đồ thị có những cạnh liên kết có lợi thế vì nó tối ưu được trong việc duyệt đồ thị. Cho phần còn lại của mục này, chúng ta xem xét một ví dụ cụ thể xem cách mà những câu truy vấn đồ thị nhỏ gọn hơn so với những câu truy vấn quan hệ tương ứng, và kết luận bằng cách đề cặp một số hệ thông quan hệ cố gắng hỗ trợ xử lý đồ thị</p>
+
+<p>Để hiểu sự tương phản giữa truy vấn đồ thị và truy vấn quan hệ, chúng ta xem xét một ví dụ đơn giản trong đó chúng ta có 3 bảng: một bảng Employee, một bảng Department và một bảng kết Employee_Department. Một nhân viên (employee) có thể được liên kết với nhiều phòng ban (Department) vì chúng được lưu trữ trong các bảng riêng biệt. Hai bảng liên hệ bằng một bảng kết gồm các khoá ngoại employee id và department id.</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image4.png" alt="" /></p>
+
+<p>Giả định rằng chúng ta muốn xuất ra danh sách những nhân viên thuộc phòng ban IT (có thể có thể nói là vua của các phòng ban :)) Câu truy vấn SQL thực hiện nhiệm vụ này đầu tiên cần kết bảng employee và bảng department và sau đó lọc ra những kết quả trên tên của phòng ban (department)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SELECT name FROM Employee</td>
+    </tr>
+    <tr>
+      <td>LEFT JOIN Employee_Department</td>
+    </tr>
+    <tr>
+      <td>ON Employee.Id = Employee_Department.EmployeeId</td>
+    </tr>
+    <tr>
+      <td>LEFT JOIN Department</td>
+    </tr>
+    <tr>
+      <td>ON Department.Id = Employee_Department.DepartmentId</td>
+    </tr>
+    <tr>
+      <td>WHERE Department.name = “IT”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nếu chúng ta muốn biểu diễn thông tin tương tự bằng cách sử dụng một mô hình dữ liệu đồ thị, chúng ta sẽ cần một node cho department và employee. Employee ssn và department name sẽ là những thuộc tính của node. Bảng Employee_Department sẽ được nắm bắt bằng một mối quan hệ trong biểu diễn đồ thị thuộc tính. Nếu bảng bảng Employee_Department có những thuộc tính bổ sung, chúng sẽ được biểu diễn như thuộc tính cạnh liên kết trong mô hình dữ liệu đồ thị. Một mẫu node với một thuộc tính đồ thị như sau:</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image5.png" alt="" /></p>
+
+<p>Chúng ta có thể truy vấn dữ liệu bằng cách sử dụng câu truy vấn Cypher sau đây</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MATCH (p:Employee) -[:works_in]-&gt; (d:Department)</td>
+    </tr>
+    <tr>
+      <td>WHERE d = “IT”</td>
+    </tr>
+    <tr>
+      <td>RETURN p</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Truy vấn Cypher ở trên nhỏ gọn hơn nhiều so với truy vấn SQL của nó. Sự nhỏ gọn này bắt nguồn từ thực tế là các phép nối được nắm bắt một cách tự nhiên bằng cách sử dụng các mẫu đồ thị (graph patterns).</p>
+
+<p>Gần đây, có nhiều hệ thống biểu diễn dữ liệu quan hệ theo cách không có lược đồ bằng cách biểu diễn mỗi thuộc tính nút dưới dạng bộ ba trong một bảng và mỗi thuộc tính cạnh dưới dạng bốn bộ trong bảng thứ hai. Những hệ thống như vậy, cung cấp một bộ lập kế hoạch truy vấn cho phép truy vấn bằng một ngôn ngữ giống Cypher mà có thể tính toán hiệu quản qua hai bảng quan hệ. Những hệ thống như thế có khả năng tận dụng công nghệ quan hệ hiện có và cũng có thể thực hiện tối ưu hóa khi một số dữ liệu kế thừa nằm trong bảng quan hệ truyền thống.</p>
+
+<p><strong>5. Limitations of a Graph Data Model - Giới hạn của một mô hình dữ liệu đồ thị</strong></p>
+
+<p>Một mô hình dữ liệu đồ thị không hẳn là một lựa chọn thích hợp nhất khi ứng dụng bao gồm chủ yếu là dữ liệu số, và chỉ dựa vào mối quan hệ nhị phân. Ví dụ như, mô hình quan hệ thì hiệu quả hơn trong việc nắm bắt những dữ liệu chuỗi thời gian (time series data) giống như sự phát triển dân số của một quốc gia. Mặc dù chúng ta có thể biểu diễn những dữ liệu như thế bằng cách sử dụng một đồ thị, nhưng kết quả trong một số lượng lớp bộ ba mà không nhất thiết mang lại cho chúng ta lợi thế về sự hiểu biết khái niệm tốt hơn và / hoặc hiệu suất truy vấn nhanh hơn thông qua duyệt đồ thị</p>
+
+<p>Có rất nhiều mối quan hệ không thể được biểu diễn một cách tự nhiên bằng mối quan hệ nhị phân. Ví du như, mối quan hệ của đối tượng A là giữa đối tượng B và C tức là một mối quan hệ ba ngôi. Một quan hệ ba ngôi có thể được biến đổi thành một tập hợp các quan hệ nhị phân bằng cách sử dụng kỹ thuật tái tổ chức (reification technique), nhưng mà làm như thế, chúng ta sẽ đánh mất đi lợi thế của việc hiểu khái niệm (better conceptual understanding) mà chúng ta nhận được từ mô hình dữ liệu đồ thị. Đồ thị cũng không phải là một biểu diễn tự nhiên nhất cho các phương toán học và phản ứng hoá học, khi tồn tại các biểu diễn cụ thể theo miền dễ hiểu</p>
+
+<p><strong>Bài tập:</strong></p>
+
+<p>…Sẽ cập nhật sau…</p>
+
+<p><strong>Bài giảng gốc: https://web.stanford.edu/class/cs520/2020/notes/What_Are_Graph_Data_Models.html</strong></p>
+
+  </div><a class="u-url" href="/lenux-notebooks/2021/06/26/what-are-some-knowledge-graph-data-models.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/lenux-notebooks/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/lenux-notebooks/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/lenux-notebooks/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nhutnamhcmus" title="nhutnamhcmus"><svg class="svg-icon grey"><use xlink:href="/lenux-notebooks/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/Namlee298" title="Namlee298"><svg class="svg-icon grey"><use xlink:href="/lenux-notebooks/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
