@@ -1,7 +1,7 @@
 ---
 layout: post
 ---
-**ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH**
+# ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH
 
 Đây là bản dịch từ Course CS520: Knowledge Graphs | Data Models, Knowledge Acquisition, Inference and Applications
 
@@ -23,9 +23,9 @@ Mọi vấn đề về dịch thuật, thuật ngữ xin để lại comment ho�
 
 \[ISSUES OF KG TRANSLATION\]
 
-**WHAT IS A KNOWLEDGE GRAPH?**
+# WHAT IS A KNOWLEDGE GRAPH?
 
-**1. Giới thiệu**
+## 1\. Giới thiệu
 
 Đồ thị tri thức là trừu tượng rất hợp lý cho việc tổ chức tri thức có cấu trúc của thế giới trên Internet, và như một cách tích hợp rút trích thông tin từ nhiều nguồn dữ liệu. Đồ thị tri thức cũng đóng vai trò trung tâm trong Machine Learning (Học Máy) như một phương pháp kết hợp tri thức nhân loại, như một mục tiêu biểu diễn tri thức (Knowledge Representation) với những tri thức đã được rút trích, và giải thích những gì học được.
 
@@ -33,7 +33,7 @@ Mục đích của chúng ta ở đây là để giải thích những thuật n
 
 Chúng ta sẽ bắt đầu bằng cách định nghĩa về đồ thị tri thức, một vài ứng dụng mà đóng góp vào sự phát triển phổ biến của Đồ thị tri thức, sau đó sử dụng Đồ thị tri thức vào trong Machine Learning (Học Máy). Chúng ta sẽ kết lại chương bằng một tổng kết chung về những điểm mới và khác biệt về phương pháp Đồ thị tri thức trong thời gian gần đây.
 
-**2. Định nghĩa Đồ thị tri thức**
+## 2\. Định nghĩa Đồ thị tri thức
 
 Một Đồ thị tri thức (Knowledge Graph) là một đồ thị hữu hướng được gán nhãn (Directed labeled graph – DLG) mà những nhãn này xác định có ý nghĩa rõ ràng.
 
@@ -55,11 +55,11 @@ Một chu trình (Cycle) là một đường đi trong đó node bắt đầu v�
 
 Thông thường thì, chúng ta quan tâm đến chỉ một vài đường đi mà nhãn cạnh liên kết giống với tất cả các cặp node. Có thể định nghĩa nhiều thuộc tính khác trên đồ thị (thành phần liên thông, thành phần liên thông mạnh) và những cách khác nhau để duyệt đồ thị như (đường đi ngắn nhất - shortest path, đường đi Hamiltonian, ….)
 
-**3. Những ứng dụng gần đây của Đồ thị tri thức**
+## 3\. Những ứng dụng gần đây của Đồ thị tri thức
 
 Có rất nhiều những ứng dụng của đồ thị tri thức cả trong nghiên cứu lẫn doanh nghiệp. Trong Khoa học máy tính, có rất nhều cách sử dụng biểu diễn đồ thị hữu hướng, ví dụ như, luồng dữ liệu đồ thị, sơ đồ quyết định nhị phân, biểu đồ trạng thái, … Ở đây chúng ta sẽ tập trung vào hai ứng ứng cụ thể dẫn đến sự phát triển phổ biến của đồ thị tri thức: tổ chức thông tin trên Internet, và tích hợp dữ liệu.
 
-**3.1 Đồ thị tri thức trong việc tổ chức thông tin trên Internet**
+### 3.1 Đồ thị tri thức trong việc tổ chức thông tin trên Internet
 
 Chúng ta sẽ giải thích việc sử dụng một đồ thị tri thức trên trang web bằng cách lấy ví dụ cụ thể về Wikidata. Wikidata đóng vai trò là nơi lưu trữ trung tâm cho dữ liệu có cấu trúc cho Wikipedia. Để cho thấy sự tác động lẫn nhau giữa hai đối tượng, và động lực của việc sử dụng đồ thị tri thức Wikidata, ta xem xét thành phố Winterthur ở Switzerland có một trang trên Wikipedia. Trang Wikipedia cho Winterthur liệt kê những thị trấn song sinh với nó: hai ở Switzerland, một ở Czech Republic, và một ở Austria. Thành phố của Ontario ở California có một trang Wikipedia với tựa đề dựa đặt là Ontario, California, liệt kê Winterhur như thành phố kết nghĩa của nó. Những quan hệ thành phố kết nghĩa và thành phố song sinh đồng nhất cũng như tương hỗ. Như vậy, nếu một thành phố A là một thành phố kết nghĩa của một thành phố khác B thì B phải là một thành phố kết nghĩa của A.Việc suy luận này nên tự động, nhưng vì thông tin này được nêu bằng tiếng Anh trong Wikipedia, nên không dễ phát hiện ra sự khác biệt này. Ngược lại, trong Wikidata, biểu diễn của Winterthur, có một mối quan hệ được gọi là cơ quan hành chính kết nghĩa liệt kê thành phố Ontario. Vì mối quan hệ này là đối xứng, trang Wikidata cho thành phố Ontario tự động bao gồm Winterthur. Do đó, khi đồ thị kiến thức Wikidata sẽ được tích hợp hoàn toàn vào Wikipedia, những sai lệch như vậy sẽ tự nhiên biến mất.
 
@@ -89,7 +89,7 @@ Một số đặc trưng chính của đồ thị tri thức Wikidata
 
 Cho dù Wikidata có nhiều ứng dụng sử dụng nó trong việc phân tích và trực quan hoá dữ liệu, nhưng sử dụng nó trên web tiếp tục vẫn là một ứng dụng hấp dẫn và dễ hiểu nhất.
 
-**3.2 Đồ thị tri thức trong việc tích hợp dữ liệu trong doanh nghiệp**
+### 3.2 Đồ thị tri thức trong việc tích hợp dữ liệu trong doanh nghiệp
 
 Tích hợp dữ liệu (Data Integration) là quá trình kết hợp dữ liệu từ nhiều nguồn khác nhau và cung cấp cho người dùng một cái nhìn tổng quát về dữ liệu.
 
@@ -97,7 +97,7 @@ Phần lớp dữ liệu doanh nghiệp nằm trong các cơ sở dữ liệu. M
 
 Nhiều tổ chức tài chính (financial institutions) quan tâm tới việc hình thành một đồ thị tri thức công ty, mà kết hợp được dữ liệu khách hàng nội bộ với dữ liệu có giấy phép từ các bên thứ ba. Một vài ví dụ về các kho dữ liệu bên thứ ba bao gồm Dunn & Bradstreet, S\&P 500, … Một ví dụ sử dụng một đồ thị tri thức công ty là trong việc đánh giá rủi ro trong khi đưa ra các quyết định cho vay. Dữ liệu bên ngoài bao gồm thông tin như các nhà cung cấp của một công ty. Nếu một công ty đang rơi vào tình trạng tài chính khó khăn, nó tăng rủi ro cho vay của các nhà cung cấp/ đầu tư của công ty đó. Để kết hợp dữ liệu bên ngoài này với dữ liệu nội bộ, người ta phải liên hệ được những lược đồ bên ngoài với lược đồ nội bộ công ty. Hơn nữa, tên công ty sử dụng trong các nguồn bên ngoài phải có mối quan hệ với định danh khách hàng tương ứng, được sử dụng bởi các tổ chức tài chính. Trong khi sử dụng một đồ thị tri thức là một hướng tiếp cận tích hợp dữ liệu, việc xác định các mối quan hệ có thể được hoãn lại cho đến khi chúng thật sự cần.
 
-**4. Đồ thị tri thức trong Trí tuệ nhân tạo**
+## 4\. Đồ thị tri thức trong Trí tuệ nhân tạo
 
 Đồ thị tri thức, hay được biết đến như mạng ngữ nghĩa (semantic network), đã được sử dụng trong việc biểu diễn trong Trí tuệ nhân tạo từ những ngày đầu tiên của lĩnh vực này. Trải qua nhiều năm, mạng ngữ nghĩa (semantic networks) được phát triển thành nhiều biểu diễn khác nhau như Conceptual Graphs, Description Logics và Rules Languages. Để nắm bắt những tri thức không chắc chắn, mô hình đồ thị xác suất (probabilistic graphical models) được phát minh.
 
@@ -109,7 +109,7 @@ Giao hoà với việc biểu diễn tri thức, một thách thức chính tron
 
 Do đó, như một điều tự nhiên, đồ thị tri thức được sử dụng như một biểu diễn được lựa chọn trong lữu trữ tri thức được học một cách tự động. Ngày càng có nhiều sự quan tâm đến việc tận dụng miền tri thức được thể hiện trong đồ thị tri thức để cải thiện Máy học.
 
-**4.1 Đồ thị tri thức như đầu ra của Máy học**
+### 4.1 Đồ thị tri thức như đầu ra của Máy học
 
 Chúng ta sẽ xem xét làm thế nào mà đồ thị được sử dụng như là một mục tiêu biểu diễn đầu ra trong các thuật toán Xử lý ngôn ngữ tự nhiên và Thị giác máy tính.
 
@@ -131,7 +131,7 @@ Thị giác máy tính (Nguyên văn: A holy grail of Computer vision, :))chén 
 
 Lấy ví dụ, từ một ảnh phía trên, một hệ thống tri thức hình ảnh nên tổ chức một đồ thị tri thức như phía bên phải. Các nút (node) trong đồ thị tri thức là đầu ra của một bộ phát hiện đối tượng. Những nghiên cứu gần đây trong Thị giác máy tính đang tập trung vào phát triển những kỹ thuật có thể dự đoán chính xác mối quan hệ giữa những đối tượng, ví dụ như, người đàn ông kia đang cần một cái xô, và chú ngựa đang ăn từ cái xô đó, … Đồ thị tri thức ở bên phải là một ví dụ của một đồ thị tri thức (tui hơi lú rồi)
 
-**4.2 Đồ thị tri thức như đầu vào của Máy học**
+### 4.2 Đồ thị tri thức như đầu vào của Máy học
 
 Những mô hình máy học sâu phổ biến (Deep Machine Learning Models) dựa trên đầu vào dữ liệu số, những ký hiệu hoặc cấu trúc rời rạc trước tiên nên được chuyển đổi về dạng biểu diễn số. Embeddings (nhúng, nghe chuối quá, nên mình giữa lại nguyên gốc) biến đổi một ký tự đầu vào thành một vector (mảng nếu 1 chiều, ma trận nếu 2 chiều, tổng quát thì tensor) số học như một biểu diễn đã trở thành sự lựa chọn cho những mô hình máy học. Chúng ta sẽ giải thích những khái niệm này và mối quan hệ của nó với đồ thị tri thức bằng cách lấy ví dụ về word embeddings và graph embeddings.
 
@@ -171,7 +171,7 @@ Giải thích graph embedding bằng cách giải tính word embedding trước 
 
 Chúng ta tính toán knowledge graph embeddings một lần, chúng có thể được sử dụng cho rất nhiều ứng dụng. Một cách sử dụng rõ ràng của knowledge graph embeddings được tính toán từ đồ thị tình bạn là giới thiệu những người bạn mới. Một nhiệm vụ nâng cao hơn liên quan đến dự đoán liên kết (tức là khả năng liên kết giữa hai nút). Dự đoán liên kết trong biểu đồ công ty có thể được sử dụng để xác định khách hàng mới tiềm năng.
 
-**5. Tổng kết**
+## 5\. Tổng kết
 
 Đồ thị là một cấu trúc cơ bản trong Toán học Rời Rạc (Discrete Mathematics) và có nhiều ứng dụng trong nhiều lĩnh vực của Khoa học Máy tính (Computer Science). Công dụng đáng chú ý của đồ thị trong biểu diễn tri thức và cơ sở dữ liệu tri thức ở dạng dữ liệu đồ thị (data graphs), taxonomies, ontologies. Một cách truyền thống, những ứng dụng như thế này dựa trên thiết kế top down. Như một đồ thị tri thức (knowledge graph) là một đồ thị hữu hướng được gán nhãn (Directed Labeled Graphs), chúng ta có thể tận dụng lý thuyết. thuật toán và cài đặt từ nhiều hệ thống dựa trên đồ thị trong Khoa học Máy tính.
 
@@ -195,4 +195,4 @@ Chúng ta kết lại bằng cách quan sát sự gia tăng quan tâm về đồ
 
 ...Sẽ cập nhật sau…
 
-Bài giảng gốc: [https://web.stanford.edu/class/cs520/2020/notes/What\_is\_a\_Knowledge\_Graph.html]()
+Bài giảng gốc: https://web.stanford.edu/class/cs520/2020/notes/What\_is\_a\_Knowledge\_Graph.html
