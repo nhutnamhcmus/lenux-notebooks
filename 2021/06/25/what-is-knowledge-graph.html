@@ -131,17 +131,9 @@ window.onload = wrap_img;
 
 <p>[ISSUES OF KG TRANSLATION]</p>
 
-<ol>
-  <li>
-    <h1 id="what-is-a-knowledge-graph">WHAT IS A KNOWLEDGE GRAPH?</h1>
+<h1 id="what-is-a-knowledge-graph">WHAT IS A KNOWLEDGE GRAPH?</h1>
 
-    <ol>
-      <li>
-        <h2 id="1-giới-thiệu">1. Giới thiệu</h2>
-      </li>
-    </ol>
-  </li>
-</ol>
+<h2 id="1-giới-thiệu">1. Giới thiệu</h2>
 
 <p>Đồ thị tri thức là một cấu trúc trừu tượng rất hợp lý, hấp dẫn cho việc tổ chức tri thức có cấu trúc của thế giới trên Internet, và như một cách tích hợp rút trích thông tin từ nhiều nguồn dữ liệu. Đồ thị tri thức cũng đóng vai trò trung tâm trong Machine Learning (Học Máy) như một phương pháp kết hợp tri thức nhân loại, như một mục tiêu biểu diễn tri thức (Knowledge Representation) với những tri thức đã được rút trích, và giải thích những gì học được.</p>
 
@@ -155,7 +147,7 @@ window.onload = wrap_img;
 
 <p>Một đồ thị hữu hướng được gán nhãn (DLG) bao gồm các nút (nodes), cạnh liên kết (edges) và nhãn (labels). Bất kỳ thứ gì đều có thể xem là một nút (node), ví dụ như con người, công ty, máy tính, … . Một cạnh liên kết (edges) kết nối một cặp nút (nodes) và thể hiện mối quan hệ được quan giữa chúng, ví dụ như mối quan hệ tình bạn giữa hai người, mối quan hệ khách hàng giữa một công ty và một người, hoặc một kết nối mạng kết nối hai máy tính. Nhãn thể hiện ý nghĩa của mối quan hệ đó, ví dụ: mối quan hệ tình bạn giữa hai người.</p>
 
-<p>Tổng quát hơn, cho một tập các nút N, và một tập các nhãn L, một đồ thị tri thức là một tập hợp con của tích hữu hướng N x L x N. Mỗi thành phần trong tập này được gọi là một bộ ba và có thể trực quan như sau:</p>
+<p>Tổng quát hơn, cho một tập các nút N, và một tập các nhãn L, một đồ thị tri thức là một tập hợp con của tích hữu hướng $N \times L \times N$. Mỗi thành phần trong tập này được gọi là một bộ ba và có thể trực quan như sau:</p>
 
 <p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-25-what-is-knowledge-graph/media/image1.png" alt="" /></p>
 
@@ -163,7 +155,7 @@ window.onload = wrap_img;
 
 <p>Nhiều tính toán dựa trên đồ thị có thể điều chỉnh thành dạng điều hướng. Ví dụ như, trong một đồ thị tri thưc tình bạn, để tính toán bạn bè của một người bạn của một người A, chúng ta có thể điều hướng đồ thị tri thức từ A đến tất cả các node B mà liên kết với nó bằng nhãn quan hệ bạn, và sau đó, đệ quy đến tất cả node C liên kết đến B bởi mối quan hệ bạn.</p>
 
-<p>Một đường đi (Path) trong một đồ thị G là một chuỗi các node (v_1, v_2, …, v_n) trong đó bất kỳ một node i nào thuộc N với 1 \leq i &lt; n, tồn tại một cạnh liên kết từ v_i đến v_{i+1}.</p>
+<p>Một đường đi (Path) trong một đồ thị G là một chuỗi các node $(v_1, v_2, …, v_n)$ trong đó bất kỳ một node i nào thuộc N với $1 \leq i &lt; n$, tồn tại một cạnh liên kết từ $v_i$ đến $v_{i+1}$.</p>
 
 <p>Một đường đi đơn (SIMPle Path) là một đường đi mà không có node nào lặp lai</p>
 
