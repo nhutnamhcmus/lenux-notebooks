@@ -1,5 +1,7 @@
 ---
 layout: post
+toc: true
+comments: true
 ---
 # ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH
 

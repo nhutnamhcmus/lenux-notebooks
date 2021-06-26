@@ -1,3 +1,5 @@
 ---
 layout: post
+toc: true
+comments: true
 ---
