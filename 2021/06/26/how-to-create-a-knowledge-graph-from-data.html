@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How To Create A Knowledge Graph From Data | Lenux Notebooks</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="How To Create A Knowledge Graph From Data" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH" />
+<meta property="og:description" content="ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH" />
+<link rel="canonical" href="https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/how-to-create-a-knowledge-graph-from-data.html" />
+<meta property="og:url" content="https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/how-to-create-a-knowledge-graph-from-data.html" />
+<meta property="og:site_name" content="Lenux Notebooks" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-26T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/how-to-create-a-knowledge-graph-from-data.html","@type":"BlogPosting","headline":"How To Create A Knowledge Graph From Data","dateModified":"2021-06-26T00:00:00-05:00","datePublished":"2021-06-26T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nhutnamhcmus.github.io/lenux-notebooks/2021/06/26/how-to-create-a-knowledge-graph-from-data.html"},"description":"ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/lenux-notebooks/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nhutnamhcmus.github.io/lenux-notebooks/feed.xml" title="Lenux Notebooks" /><link rel="shortcut icon" type="image/x-icon" href="/lenux-notebooks/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/lenux-notebooks/">Lenux Notebooks</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/lenux-notebooks/about/">About Me</a><a class="page-link" href="/lenux-notebooks/search/">Search</a><a class="page-link" href="/lenux-notebooks/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How To Create A Knowledge Graph From Data</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-26T00:00:00-05:00" itemprop="datePublished">
+        Jun 26, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      23 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#đồ-thị-tri-thức---knowledge-graph">ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH</a></li>
+<li class="toc-entry toc-h1"><a href="#how-to-create-a-knowledge-graph-from-data">HOW TO CREATE A KNOWLEDGE GRAPH FROM DATA</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#1-giới-thiệu">1. Giới thiệu</a></li>
+<li class="toc-entry toc-h2"><a href="#2-ánh-xạ-lược-đồ---schema-mapping">2. Ánh xạ lược đồ - Schema Mapping</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#21-những-thách-thức-với-ánh-xạ-lược-đồ---schema-mapping">2.1 Những thách thức với Ánh xạ lược đồ - Schema Mapping</a></li>
+<li class="toc-entry toc-h3"><a href="#22-xác-định-ánh-xạ-lược-đồ---specifying-schema-mapping">2.2 Xác định Ánh xạ lược đồ - Specifying Schema Mapping</a></li>
+<li class="toc-entry toc-h3"><a href="#23-bootstrapping-schema-mapping">2.3 Bootstrapping Schema Mapping</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#3-ghi-liên-kết---record-linkage">3. Ghi liên kết - Record Linkage</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#31-vấn-đề-mẫu-ghi-liên-kết---a-sample-record-linkage-problem">3.1 Vấn đề mẫu ghi liên kết - A Sample Record Linkage Problem</a></li>
+<li class="toc-entry toc-h3"><a href="#32-phương-pháp-tiếp-cận-giải-quyết-vấn-đề-mẫu-ghi-liên-kết">3.2 Phương pháp tiếp cận giải quyết vấn đề mẫu ghi liên kết</a></li>
+<li class="toc-entry toc-h3"><a href="#33-random-forests">3.3 Random Forests</a></li>
+<li class="toc-entry toc-h3"><a href="#34-active-learning-of-random-forests">3.4 Active Learning of Random Forests</a></li>
+<li class="toc-entry toc-h3"><a href="#35-applying-the-rules">3.5 Applying the Rules</a></li>
+<li class="toc-entry toc-h3"><a href="#36-performing-the-matching">3.6 Performing the Matching</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#4-tổng-kết">4. Tổng kết</a></li>
+</ul>
+</li>
+</ul><h1 id="đồ-thị-tri-thức---knowledge-graph">
+<a class="anchor" href="#%C4%91%E1%BB%93-th%E1%BB%8B-tri-th%E1%BB%A9c---knowledge-graph" aria-hidden="true"><span class="octicon octicon-link"></span></a>ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Đây là bản dịch từ Course CS520: Knowledge Graphs</td>
+      <td>Data Models, Knowledge Acquisition, Inference and Applications</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Department of Computer Science, Stanford University, Spring 2021</p>
+
+<p>Knowledge graphs have emerged as a compelling abstraction for organizing world’s structured knowledge over the internet, capturing relationships among key entities of interest to enterprises, and a way to integrate information extracted from multiple data sources. Knowledge graphs have also started to play a central role in machine learning and natural language processing as a method to incorporate world knowledge, as a target knowledge representation for extracted knowledge, and for explaining what is being learned. This class is a graduate level research seminar and will include lectures on knowledge graph topics (e.g., data models, creation, inference, access) and invited lectures from prominent researchers and industry practitioners. The seminar emphasizes synthesis of AI, database systems and HCI in creating integrated intelligent systems centered around knowledge graphs.</p>
+
+<p>Mục đích: Là tìm hiểu cũng như trau dồi kiến thức chuyên môn trong lĩnh vực Knowledge Graph cũng như từ vựng tiếng Anh. Không vì mục đích kinh doanh hay bất cứ mục đích về lợi nhuận, tất cả là vì mục đích chia sẻ kiến thức và học tập.</p>
+
+<p>Mọi thông tin về những chủ đề được note lại có thể tìm thấy ở đây:</p>
+
+<p>https://web.stanford.edu/class/cs520/2020/notes/Table_Of_Contents.html</p>
+
+<p>Video của các buổi seminar cũng được công khai trên địa chỉ Youtube:</p>
+
+<p>https://www.youtube.com/playlist?list=PLDhh0lALedc5paY4N3NRZ3j_ui9foL7Qc</p>
+
+<p>Mọi vấn đề về dịch thuật, thuật ngữ xin để lại comment hoặc gửi về địa chỉ email: lenam.fithcmus@gmail.com với tiêu đề</p>
+
+<p>[ISSUES OF KG TRANSLATION]</p>
+
+<h1 id="how-to-create-a-knowledge-graph-from-data">
+<a class="anchor" href="#how-to-create-a-knowledge-graph-from-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>HOW TO CREATE A KNOWLEDGE GRAPH FROM DATA</h1>
+
+<h2 id="1-giới-thiệu">
+<a class="anchor" href="#1-gi%E1%BB%9Bi-thi%E1%BB%87u" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Giới thiệu</h2>
+
+<p>Những tổ chức lớn tạo ra lượng lớn dữ liệu nội bộ và cũng tiêu thụ dữ liệu được tạo ra bởi các nhà cung cấp bên thứ ba (third party providers). Nhiều nhà cung cấp dữ liệu có được dữ liệu bằng cách xử lý nhưng nguồn phi cấu trúc, và đầu tư một nổ lực đáng kể trong việc cung cấp nó trong một dạng có cấu trúc cho việc sử dụng của người dùng. Để sử dụng hiệu quả những dữ liệu bên ngoài, nó phải liên quan tới dữ liệu bên trong công ty, Như tích hợp dữ liệu cho phép nhiều trường hợp sử dụng phổ biến như 360 view of a customer - góc nhìn 360 độ của khách hàng, fraud detection - phát hiện gian lận, risk assessment - đánh giá rủi ro, loan approval - phê duyệt khoản vay, .. Với chương này, chúng ta sẽ thảo luận vấn đề khởi tạo một đồ thị tri thức bằng cách tích hợp dữ liệu có sẵn từ những nguồn có cấu trúc. Chúng ta sẽ xem xét vấn đề của việc rút trích dữ liệu từ những nguồn dữ liệu phi cấu trúc trong chương tiếp theo :v</p>
+
+<p>Khi kết hợp dữ liệu từ nhiều nguồn vào một đồ thị tri thức, chúng ta có thể thực hiện một số thiết kế sơ đồ như chúng ta đã thảo luận trong chương trước :v Chúng ta cũng bắt đầu mà không cần lược đồ vì việc tải dữ liệu bên ngoài thẳng vào như bộ ba vào một đồ thị tri thức rất dễ dàng. Thông thường, thiết kế ban đầu của lược đồ dựa trên trường hợp cụ thể mà người ta muốn giải quyết. Ở mức độ tồn tại ban đầu của lược đồ như thế, chúng ta phải quyết định các thành phần dữ liệu từ một nguồn dữ liệu mới nên được thêm vào đồ thị tri thức như thế nào. Điều này thường được biết đến là vấn đề schema mapping - vấn đề ánh xạ lược đồ. Hơn nữa, để liên hệ lược đồ của hai nguồn, chúng ta cũng phải giải quyết khả năng mà một thực thể trong dữ liệu đến (ví dụ như một Company) có thể đã tồn tại trong đồ thị tri thức của chúng ta. Vấn đề suy luận nếu hai thực thể trong dữ liệu có thể cùng là một thực thể trong thế giới thực được gọi là vấn đề record linkage - mẫu ghi liên kết. Vấn đề mẫu ghi liên kết cũng xuất hiện khi các nhà cung cấp dữ liệu bên thứ ba gửi những nguồn cấp dữ liệu mới (a new data feeds), và đồ thị tri thức của chúng ta phải được cập nhật (up-to-daye) với những nguồn dữ liệu mới này.</p>
+
+<p>Trong chương này, chúng ta sẽ cùng thảo luận những tiếp cận hiện tại cho giải quyết vấn đề ánh xạ lược đồ và vấn đề mẫu ghi liên kết. Chúng ta sẽ nêu những thuật toán state-of-the-art và thảo luận về mức độ hiệu qủa của chúng trong những vấn đề của ngành :v</p>
+
+<h2 id="2-ánh-xạ-lược-đồ---schema-mapping">
+<a class="anchor" href="#2-%C3%A1nh-x%E1%BA%A1-l%C6%B0%E1%BB%A3c-%C4%91%E1%BB%93---schema-mapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Ánh xạ lược đồ - Schema Mapping</h2>
+
+<p>Ánh xạ lược đồ giả định rằng tồn tại một lược đồ mà sẽ được sử dụng cho viêc lưu trữ dữ liệu mới đến từ một nguồn khác. Ánh xạ lược đồ sau đó xác định những quan hệ và thuộc tính nào trong cơ sở dữ liệu đầu vào tương ứng với những thuộc tính và quan hệ trong đồ thị tri thức. Tồn tại những kỹ thuật cho bootstrapping schema mappings. Bootstrapped schema mappings có thể được điều chỉnh thông qua sự can thiệp của con người.</p>
+
+<p>Chúng ta sẽ bắt đầu thảo luận về ánh xạ lược đồ bằng cách nêu ra một số thách thức và nhận định liệu chúng ta có nên chuẩn bị cho việc phần lớn quá trình này có thể thực hiện thủ công và tốn nhiều công sức. Sau đó, chúng ta mô tả một tiếp cận cho việc chỉ định ánh xạ giữa lược đồ nguồn đầu vào và lược đồ của đồ thị tri thức. Chúng ta sẽ kết thúc mục này bằng đề cập một vài kỹ thuật có thể được sử dụng cho bootstrap schema mapping.</p>
+
+<h3 id="21-những-thách-thức-với-ánh-xạ-lược-đồ---schema-mapping">
+<a class="anchor" href="#21-nh%E1%BB%AFng-th%C3%A1ch-th%E1%BB%A9c-v%E1%BB%9Bi-%C3%A1nh-x%E1%BA%A1-l%C6%B0%E1%BB%A3c-%C4%91%E1%BB%93---schema-mapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1 Những thách thức với Ánh xạ lược đồ - Schema Mapping</h3>
+
+<p>Những thách thức chính trong tự động ánh xạ lược đồ</p>
+
+<p>- (1) Khó để hiểu lược đồ</p>
+
+<p>- (2) Độ phức tạp của việc ánh xạ</p>
+
+<p>- (3) Ít dữ liệu huấn luyện có sẵn</p>
+
+<p>Chúng ta sẽ thảo luận chi tiết hơn những thách thức này</p>
+
+<p>Lược đồ cơ sở dữ liệu quan hệ thương mại (Commercial relational database schemas) có thể rất lớn bao gồm hàng ngàn quan hệ và hàng vạn thuộc tính. Thỉnh thoảng, tên của những quan hệ và thuộc tính không có ngữ nghĩa (ví dụ, segment1, segment2 @@ ) mà không liên quan gì bản thân chúng với bất kỳ dự đoán tự động thực tế nào của ánh xạ.</p>
+
+<p>Ánh xạ giữa lược đồ đầu vào và lược đồ trong đồ thị tri thức không phải lúc nào cũng đơn giản là ánh xạ 1-1 (one-to-one mapping). Ánh xạ có thể liên quan tới những tính toán, áp dụng logic kinh doanh và có những luật đặc biệt cho việc xử lý tình huống như là missing values. Nó trở thành một sự kỳ vọng quá cao đối với bất kỳ quá trình xử lý tự động nào suy diễn những phép ánh xạ phức tạp như vậy.</p>
+
+<p>Cuối cùng, nhiều giải pháp ánh xạ tự động dựa trên các kỹ thuật Máy học (Machine Learning techniques) yêu cầu một lượng lớn dữ liệu huấn luyện để hoạt động một cách hiệu quả. Như lược đồ thông tin, bằng định nghĩa, nhỏ hơn nhiều dữ liệu bản thân nó, rất là viễn vong để kỳ vọng rằng chúng sẽ có một lượng lớn ánh xạ lược đồ sẵn có để một thuật toán ánh xạ có thể được huấn luyện.</p>
+
+<h3 id="22-xác-định-ánh-xạ-lược-đồ---specifying-schema-mapping">
+<a class="anchor" href="#22-x%C3%A1c-%C4%91%E1%BB%8Bnh-%C3%A1nh-x%E1%BA%A1-l%C6%B0%E1%BB%A3c-%C4%91%E1%BB%93---specifying-schema-mapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2 Xác định Ánh xạ lược đồ - Specifying Schema Mapping</h3>
+
+<p>Trong phần này, chúng ta sẽ đề cập một phương pháp tiếp cận khả thi để xác định ánh xạ giữa nguồn dữ liệu đầu vào và một mục tiêu trong lược đồ đồ thị tri thức. Chúng ta sẽ lấy một ví dụ trong lĩnh vực dụng cụ nấu ăn. Chúng ta có thể tưởng tượng những nhà cung cấp khác nhau cung cấp các mặt hàng trên một trang thương mại điện tử (E-commerce site) có mong muốn tổng hợp và quảng bá đến khách hàng của họ. Chúng ta sẽ xem xét hai nguồn ví dụ và sau đó thêm vào lược đồ đồ thị tri thức để mà chúng ta sẽ định nghĩa các ánh xạ.</p>
+
+<p>Chúng ta hiển thị một vài mãu dữ liệu từ nguồn dữ liệu đầu tiên trong một bảng quan hệ gọi là cookware. Nó có bốn thuộc tính: name, type, material, và price</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-how-to-create-a-knowledge-graph-from-data/media/image1.png" alt=""></p>
+
+<p>Cơ sở dữ liệu thứ hai được hiển thị bên dưới cho thấy danh sách những sản phẩn của một nhà sản suất. Trong trường hợp này, có nhiều bảng, một bảng ứng với một thuộc tính sản phẩm. Bảng <em>kind</em> xác định loại của mỗi sản phẩm. Bảng <em>base</em> xác định mỗi sản phẩm được làm từ kim loại ăn mòn -corrosible metal (nhôm - aluminum hoặc không gỉ - stainless), kim loại không ăn mòn - noncorrosible metal (sắt - iron hoặc thép - steel) hay thứ gì đó không phải kim loại (thủy tinh hoặc gốm - ceramic). Bảng coated xác định những sản phẩm này có phủ chống dính hay không (nonstick coatings). Bảng price cho thông tin về giá bán. Không có thông về vật liệu. Công ty được chọn không cung cấp thông tìn về kim loại được sử dụng trong mỗi sản phải. Lưu ý rằng, bản coated chỉ có những giá trị dương; những sản phẩm mà không có lớp phủ chống dính không được đề cặp đến.</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-how-to-create-a-knowledge-graph-from-data/media/image2.png" alt=""></p>
+
+<p>Giả sử rằng lược đồ mong muốn cho đồ thị tri thức được biểu diễn như một đồ thị thuộc tính được cho ở bên dưới đây. Chúng ta có hai loại nút khác nhau: một cho sản phẩm - Product, và cái kia cho các nhà cung cấp – Supplier. Hai nút này liên kết với nhau bởi một mối quan hệ gọi là <em>has_supplier</em>. Mỗi nút sản phẩm có những thuộc tính là “type” và “price”</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-how-to-create-a-knowledge-graph-from-data/media/image3.png" alt=""></p>
+
+<p>Để xác định lược đồ ánh xạ và để xử lý cụ thể, chúng ta sẽ sử dụng định nghĩa một bộ ba để mà một xử lý tương tự có thể áp dụng bất kể chúng ta sử dụng mô hình dữ liệu đồ thị thuộc tính hay mô hình RDF cho đồ thị tri thức. Với một đồ thị tri thức RDF, chúng sẽ cần phải khởi tạo IRI, tức một quá trình trực giao để liên hệ hai lược đồ, và ở đây chúng ta bỏ qua điều này. Những bộ ba mong muốn trong mục tiêu đồ thị tri thức được liệt kê bằng bảng dưới đây.</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-how-to-create-a-knowledge-graph-from-data/media/image4.png" alt="">Bất kỳ ngôn ngữ lập trình nào có thể dược sử dụng để biểu diễn ánh xạ. Ở đây, chúng ta chọn sử dụng Datalog để biểu diễn ánh xạ. Các luật dưới đây rất đơn giản. Các biến được biểu thị bằng cách sử dụng các chữ cái in hoa. Luật thứ ba thêm ràng buộc vender_1 để chỉ ra nguồn dữ liệu.</p>
+
+<p>knowledge_graph(ID,type,Type) :- cookware(ID,TYPE,MATERIAL,PRICE)<br>
+knowledge_graph(ID,price,PRICE) :- cookware(ID,TYPE,MATERIAL,PRICE)<br>
+knowledge_graph(ID,has_supplier,vendor_1) :- cookware(ID,TYPE,MATERIAL,PRICE)</p>
+
+<p>Kế đến, chúng ta xem xét những luật cho việc ánh xạ nguồn dữ liệu thứ hai. Những luật cũng khá là tương tự như những luật ánh xạ cho nguồn dữ liệu thứ nhất ngoài trừ là thông tin bây giờ thì đến từ hai bảng khác nhau trong nguồn dữ liệu</p>
+
+<p>knowledge_graph(ID,type,Type) :- kind(ID,TYPE)</p>
+
+<p>knowledge_graph(ID,price,PRICE) :- price(ID,PRICE)</p>
+
+<p>knowledge_graph(ID,has_supplier,vendor_2) :- kind(ID,TYPE)</p>
+
+<p>Tổng quát mà nói, nó không hợp lý khi sử dụng lại các bộ định danh từ cơ sở dữ liệu nguồn, và chúng ta mong muốn là tạo ra những bộ định danh mới cho việc sử dụng trong đồ thị tri thức. Trong một số trường hợp, đồ thị tri thức có thể đã chứa những đối tượng tương đương với chúng trong dữ liệu được nhập. Chúng ta sẽ xem xét vấn đề này trong phần mẫu ghi liên kết - record linkage</p>
+
+<h3 id="23-bootstrapping-schema-mapping">
+<a class="anchor" href="#23-bootstrapping-schema-mapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3 Bootstrapping Schema Mapping</h3>
+
+<p>Như được đề cập ở phần 2.1, một tiếp cận hoàn toàn tự động để ánh xạ lược đồ đối mặt với rất nhiều khó khăn trong thực tế. Ở đây đề cập một công trình về bootrapping the schema mappings dựa trên nhiều kỹ thuật và xác nhận chúng bằng đầu vào con người. Những kỹ thuật Boostrapping cho ánh xạ lược đồ có thể được phân loại thành những loại sau đây:</p>
+
+<p>- (1) Linguistic matching - Kết hợp ngôn ngữ học</p>
+
+<p>- (2) Matching based on instances - Kết hợp dựa trên thể hiện</p>
+
+<p>- (3) Matching based on constraints - Kết hợp dựa trên ràng buộc</p>
+
+<p>Những kỹ thuật ngôn ngữ học có thể được sử dụng trên tên của một thuộc tính hoặc trên những văn bản mô tả của một thuộc tính. Các tiếp cận đầu tiên và cũng rõ ràng nhất là kiểm tra tên của hai thuộc tính là bằng nhau hay không. Chúng ta có thể có một độ tin cậy cao trong so sánh bằng nếu những tên là IRIs. Thứ hai, chúng ta có thể chuẩn hoá tên bằng cách xử lý chúng thông qua một số kỹ thuật như stemming và kiểu tra tính bằng nhau. Lấy ví dụ, thông qua xử lý, chúng ta có thể kết luận ánh xạ của CName đến Customer Name. Thứ ba, chúng ta có thể kiểm tra ánh xạ dựa trên từ đồng nghĩa - synonyms (ví dụ như là: car và automobile) hoặc từ siêu nghĩa - hypernyms (ví dụ như là book và publication). Thứ tư, chúng ta có thể kiểm tra ánh xạ dựa trên những chuỗi con chung, phát âm chung, và cách mà những từ đó được phát âm. Và cuối cùng, chúng ta có thể kết hợp những mô tả của những thuộc tính thông qua những kỹ thuật ngữ nghĩa tương đồng (semantic similarity techniques). Ví dụ, một cách tiếp cận để rút trích những từ khoá từ phần mô tả và sau đó kiểm tra độ tương đồng giữa chúng bằng cách sử dụng những kỹ thuật mà chúng ta đã nếu ra.</p>
+
+<p>Trong kết hợp dựa trên những thể hiện, người ta kiểm tra loại dữ liệu có tồn tại. Ví dụ, nếu một giá trị thuộc tính cụ thể mang kiểu dữ liệu ngày tháng, nó chỉ có thể kết hợp dựa trên những thuộc tính mang những giá trị ngày tháng. Nhiều kiểu dữ liệu chuẩn hoá có thể được suy diễn bằng cách kiểu tra dữ liệu</p>
+
+<p>Trong một số trường hợp, lược đồ cung cấp thông tin về những ràng buộc. Ví dụ, nếu một lược đồ xác định một thuộc tính cụ thể là đơn nhất đối với một cá thể, và phải là số, nó là một đối sánh tiềm năng hoặc các thuộc tính xác minh như số nhân viên hoặc số an sinh xã hội.</p>
+
+<p>Những kỹ thuật được đề cặp ở đây là không chính xác và do đó có thể chỉ sử dụng để boostrap quá trình trình ánh xạ lược đồ. Bất kỳ ánh xạ nào cũng phải được xác minh và xác nhận bởi những người chuyên gia.</p>
+
+<h2 id="3-ghi-liên-kết---record-linkage">
+<a class="anchor" href="#3-ghi-li%C3%AAn-k%E1%BA%BFt---record-linkage" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Ghi liên kết - Record Linkage</h2>
+
+<p>Chúng ta sẽ bắt đầu thảo luận về vấn đề mẫu ghi liên kết bằng một ví dụ cụ thể. Sau đó, chúng ta sẽ đưa ra một cái nhìn tổng quan về một phương pháp tiếp cận điển hình để giải quyết vấn đề này.</p>
+
+<h3 id="31-vấn-đề-mẫu-ghi-liên-kết---a-sample-record-linkage-problem">
+<a class="anchor" href="#31-v%E1%BA%A5n-%C4%91%E1%BB%81-m%E1%BA%ABu-ghi-li%C3%AAn-k%E1%BA%BFt---a-sample-record-linkage-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.1 Vấn đề mẫu ghi liên kết - A Sample Record Linkage Problem</h3>
+
+<p>Giả sử rằng chúng ta có dữ liệu với hai bảng. Vấn đề mẫu ghi liên kết liên quan tới việc dự đoán mẫu ghi $a_1$ giống với mẫu ghi $b_1$ và mẫu ghi $a_3$ giống với mẫu ghi $b_2$. Giống như việc ánh xạ lược đồ, đây là những dự đoán không chính xác và cần phải được xác nhận bởi con người.</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-how-to-create-a-knowledge-graph-from-data/media/image5.png" alt=""></p>
+
+<p>Một đồ thị tri thức lớn có thể chứa lượng thông tin trên 10 triệu công ty. Nó có thể nhận một nguồn cung cấp dữ liệu, mà được rút trích từ văn bản ngôn ngữ tự nhiên. Những nguồn cung cấp dữ liệu như thế có thể chứa hơn 100,000 công tin. Cho dù nếu một đồ thị tri thức có một phương thức chuẩn hoá để tham chiếu đến những công tin, nhưng nguồn dữ liệu mới được rút trích từ văn bản sẽ không có những bộ định danh chuẩn hoá. Tác vụ mẫu ghi liên kết là liên hệ những công ty mà chứa những nguồn cung cấp mới với những công ty đã tồn tại trong đồ thị tri thức. Vì các khối dữ liệu rất lớn, thực hiện tác vụ này một cách hiểu quả là điều tối quan trọng.</p>
+
+<h3 id="32-phương-pháp-tiếp-cận-giải-quyết-vấn-đề-mẫu-ghi-liên-kết">
+<a class="anchor" href="#32-ph%C6%B0%C6%A1ng-ph%C3%A1p-ti%E1%BA%BFp-c%E1%BA%ADn-gi%E1%BA%A3i-quy%E1%BA%BFt-v%E1%BA%A5n-%C4%91%E1%BB%81-m%E1%BA%ABu-ghi-li%C3%AAn-k%E1%BA%BFt" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.2 Phương pháp tiếp cận giải quyết vấn đề mẫu ghi liên kết</h3>
+
+<p>Độ hiệu quả của mẫu ghi liên kết (record linkage) liên quan tới hai bước: blocking và matching. Bước blocking liên quan tới một tính toán nhanh để chọn ra một tập con những mẫu ghi từ nguồn và mục tiêu mà sẽ được xem trong suốt một bước đối sánh chính xác và tốn kém hơn. Trong bước matching, chúng tôi đối sánh theo từng cặp với tập hợp con các bản ghi đã được chọn trong quá trình blocking. Trong ví dụ được đề cập ở trên, chúng ta có thể sử dụng một chiến lược blocking xem xét đối sánh chỉ những mẫu ghi mà phù hợp với trạng thái. Với chiến lược đó, chúng ta chỉ cần phải xem xét sự phù hợp $a_1$ với $b_1$, $a_3$ với $b_2$ do đó giảm đáng kể số lần so sánh phải thực hiện.</p>
+
+<p>Cả hai bước blocking và matching thực hiện bằng cách học một random forest thông qua một quá trình học chủ động (active learning process). Một random forest là một tập của các luật quyết định mà được cho bởi những dữ đoán cuối cùng thông qua đa số phiếu được bầu được trả về bởi những luật riêng lẻ. Active learning (Học chủ động) là một quá trình học mà được xây dựng random forest bằng cách chủ động theo dõi hiệu suất của nó trên tập dữ liệu kiểm tra và lựa chọn có chọn lọc những mẫu huấn luyện mới để cải thiện hiệu suất của nó. Chúng ta sẽ giải thích chi tiết hơn hai bước này ở phần kế tiếp.</p>
+
+<h3 id="33-random-forests">
+<a class="anchor" href="#33-random-forests" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.3 Random Forests</h3>
+
+<p>Những luật blocking dựa trên hàm kiểm tra chuẩn hoá độ tương đồng, giống như, độ phụ hợp chính xác - exact match, tương đồng Jaccard - Jaccarc Similarity, tương đồng chồng chéo - overlap similarity, tương đồng cosin - cosine similarity, … Lấy ví dụ, nếu chúng ta đã kiểm tra tương đồng chồng chéo giữa “Prolific Consulting” và “Prolific Consulting Inc.”, đầu tiên chúng ta sẽ thu thập những token trong mỗi chúng, và sau đó kiểm tra những token nào là chung, cho chung ta một điểm tương đồng là 2/3</p>
+
+<p>Chúng ta biểu diễn một phần của một random forest cho blocking. Một random forest có thể được quan sát như một tập các luật. Random forest được hiển thị bên dưới là một tập của hai tập hợp luật. Các đối số của mỗi vị từ là hai giá trị được so sánh.</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-how-to-create-a-knowledge-graph-from-data/media/image6.png" alt=""></p>
+
+<p>Có nhiều nguyên lý tổng quát cho việc tự động hoá việc chọn hàm tương đồng (similarity functions) cho luật blocking. Ví dụ, với những thuộc tính mang giá trị số học như tuổi – age, trọng lượng – weight, giá cả – price, … những hàm tương đồng ứng viên có thể là: khớp chính xác - exact match, hiệu tuyệt đối - absolute difference, hiệu tương đối - relative difference, và khoảng cách Levenstein - Levenstein distance. Với những thuộc tính mang giá trị chuỗi (string), người ta thường dùng edit distance, cosine similarity, Jaccard similarity, và TF/IDF functions.</p>
+
+<h3 id="34-active-learning-of-random-forests">
+<a class="anchor" href="#34-active-learning-of-random-forests" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.4 Active Learning of Random Forests</h3>
+
+<p>Chúng ta có thể áp dụng Random Forest cho những luật blocking thông qua theo đổi quá trình học chủ động (active learning process). Chúng ta chọn một cách ngẫu nhiên một tập những cặp từ hai bộ dữ liệu. Bằng cách áp dụng hàm tương đồng lên mỗi thành phần của cặp, chúng ta có được một tập những đặc trưng cho mỗi cặp đó. Sử dụng những đặc trưng này, chúng ta sử dụng một Random Forest. Chúng ta áp dụng những luật có được lên một cặp mới được chọn từ tập dữ liệu, và đánh giá hiệu suất của chúng. Nếu hiệu suất dưới một ngưỡng (threshold) nhất định, chúng ta lặp lại chu trình, bằng cách cung cấp bổ sung những mẫu có nhãn cho đến khi hiệu suất chấp nhận được được tìm thấy. Chúng ta sẽ minh hoạ quá trình này bằng ví dụ ngay sau đây.</p>
+
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-how-to-create-a-knowledge-graph-from-data/media/image7.png" alt=""></p>
+
+<p>Chúng ta giả định rằng bộ dữ liệu đầu tiên chứa ba thành phần: $a$, $b$, và $c$ và bộ dữ liệu thứ hai chứa hai thành phần $d$ và $e$. Từ bộ dữ liệu này, chúng ta lấy hai cặp $(a, d)$ và $(c, d)$ được gán nhãn tương đồng và không tương đồng bởi người dùng. Trên cặp này, chúng ta áp dụng những hàm tương đồng mà mỗi hàm sẽ cho ra kết quả là một đặc trưng của cặp. Sau đó chúng ta sử dụng những đặc trưng này để học một random forest. Chúng ta áp dụng những luật đã được học cho những bộ ba không nằm trong tập huấn luyện và hỏi người dùng để xác minh kết quả. Người dùng thông báo cho chúng ta biết là cặp $(b, d)$ là không đúng. Chúng ta thêm $(b, d)$ vào tập dữ liệu huấn luyện của chúng ta, và chúng ta lặp lại quá trình với vòng lặp tiếp theo. Sau một số vòng lặp, chúng ta dự đoán xem quá trình hội tụ chưa và cho chúng ta một Random forest để chúng ta có thể sử dụng một cách hiệu quản trong bước blocking.</p>
+
+<p>Khi một Random forest đã được học, chúng ta có thể biểu diễn mỗi một luật cho người dùng. Dựa trên xác minh của người dùng, chúng ta chọn ra những luật sẽ được sử dụng trong những bước tiếp theo.</p>
+
+<h3 id="35-applying-the-rules">
+<a class="anchor" href="#35-applying-the-rules" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.5 Applying the Rules</h3>
+
+<p>Sau khi chúng ta học được những luật, bước kế tiếp là áp dụng chúng lên dữ liệu thật sự. Khi kích thước dữ liệu là cực lớn, nó vẫn không thể áp dụng những luật blocking cho tất cả các cặp đối tượng. Do đó, chúng ta phải dùng đến lập chỉ mục (resort to indexing). Giả sử sằng, một trong các luật yêu cầu chỉ mục Jaccard nên phải lớn hơn $0.7$, và chúng ta đang tìm kiếm phù hợp với bộ phim Sound of Music. Vì độ dài của tên bộ phim là $3$, chúng ta chỉ cần phải xem xét những bộ phim trong dữ liệu của chúng ta mà độ dài của chúng nằm giữa $3 \times 0.7$ và $3/0.7$, tức là nằm giữa 2 và 4. Nếu chúng ta đã lập chỉ mục tập dữ liệu về kích thước của phim, nó rất hiệu quả để chọn được những bộ phim mà kích thước tên nằm giữa $2$ và $4$, và lọc tập hơn thông qua việc áp dụng những luật blocking.</p>
+
+<h3 id="36-performing-the-matching">
+<a class="anchor" href="#36-performing-the-matching" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.6 Performing the Matching</h3>
+
+<p>Bước blocking tạo ra một tạp những tập được tinh giảm đi rất nhiều mà đã được kiểm tra xem chúng có khớp với nhau hay không. Cấu trúc chung cho quá trình matching khá là tương tự với lần đầu chúng ta xác định một tập những đặc trưng, học một random forest, và thông qua quá trình active learning mà tinh chỉnh nó. Điểm khác biệt mấu chốt giữa bước blocking và matching là quá trình matching cần phải chính xác và cần nhiều tính toán. Bởi vì đây là bước cuối cùng trong mẫu ghi liên kết (record linkage) và chúng ta cần có độ tin cậy cao rằng hai thực thể phải chắc chắn khớp với nhau.</p>
+
+<h2 id="4-tổng-kết">
+<a class="anchor" href="#4-t%E1%BB%95ng-k%E1%BA%BFt" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Tổng kết</h2>
+
+<p>Trong chương này, chúng ta đề cập đến vấn đề khởi tạo một đồ thị tri thức bằng cách tích hợp dữ liệu đến từ những nguồn có cấu trúc. Lược đồ tích hợp của đồ thị tri thức có thể được tinh chỉnh và đánh giá theo mỗi yêu cầu của doanh nghiệp. Việc ánh xạ giữa những lược đồ của những nguồn khác nhau có thể được boostrapped thông qua những kỹ thuật thuật tự động, những chúng cần có xác mình đầu vào của con người. Record linkage - mẫu ghi liên kết là sự tích hợp dự liệu ở mức thể hiện, nơi mà chúng ta cần phải dự đoán đối sánh giữa hai thể hiện trong trường hợp không có bộ định danh duy nhất. Phương pháp tiếp cận chung nhất cho record linkage là học một Random Forest thông qua quá trình active learning. Với những ứng dụng yêu cầu độ chính xác cao, tính toán record linkage một cách tự động vẫn cần đến sự xác minh của con người.</p>
+
+<p>Bài tập:</p>
+
+<p>…Sẽ cập nhật sau…</p>
+
+<p>Bài giảng gốc: <a href="">https://web.stanford.edu/class/cs520/2020/notes/How_To_Create_A_Knowledge_Graph_From_Data.html</a></p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nhutnamhcmus/lenux-notebooks"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/lenux-notebooks/2021/06/26/how-to-create-a-knowledge-graph-from-data.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/lenux-notebooks/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/lenux-notebooks/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/lenux-notebooks/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nhutnamhcmus" title="nhutnamhcmus"><svg class="svg-icon grey"><use xlink:href="/lenux-notebooks/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/Namlee298" title="Namlee298"><svg class="svg-icon grey"><use xlink:href="/lenux-notebooks/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

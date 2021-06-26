@@ -102,7 +102,34 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="đồ-thị-tri-thức---knowledge-graph">ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH</h1>
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#đồ-thị-tri-thức---knowledge-graph">ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH</a></li>
+<li class="toc-entry toc-h1"><a href="#what-are-some-graph-data-models">WHAT ARE SOME GRAPH DATA MODELS?</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#1-giới-thiệu">1. Giới thiệu</a></li>
+<li class="toc-entry toc-h2"><a href="#2-resource-description-frame---khung-mô-tả-tài-nguyên">2. Resource Description Frame - Khung mô tả tài nguyên</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#21-rdf-data-model---mô-hình-dữ-liệu-rdf">2.1 RDF Data Model - Mô hình dữ liệu RDF</a></li>
+<li class="toc-entry toc-h3"><a href="#22-sparql-query-language---ngôn-ngữ-truy-vấn-sparql">2.2 SPARQL Query Language - Ngôn ngữ truy vấn SPARQL</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#3-property-graphs---đồ-thị-thuộc-tính">3. Property Graphs - Đồ thị thuộc tính</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#31-mô-hình-dữ-liệu-đồ-thị-thuộc-tính-property-graph-data-model">3.1 Mô hình dữ liệu đồ thị thuộc tính (Property Graph Data Model)</a></li>
+<li class="toc-entry toc-h3"><a href="#32-cypher-query-language">3.2 Cypher Query Language</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#4-comparison-of-data-models---so-sánh-các-mô-hình-dữ-liệu">4. Comparison of Data Models - So sánh các mô hình dữ liệu</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#41-comparison-of-rdf-and-property-graph-data-models">4.1 Comparison of RDF and Property Graph Data Models</a></li>
+<li class="toc-entry toc-h3"><a href="#42-comparison-of-graph-models-and-relational-data-model---so-sánh-mô-hình-đồ-thị-và-mô-hình-dữ-liệu-quan-hệ">4.2 Comparison of Graph Models and Relational Data Model - So sánh mô hình đồ thị và mô hình dữ liệu quan hệ</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#5-limitations-of-a-graph-data-model---giới-hạn-của-một-mô-hình-dữ-liệu-đồ-thị">5. Limitations of a Graph Data Model - Giới hạn của một mô hình dữ liệu đồ thị</a></li>
+</ul>
+</li>
+</ul><h1 id="đồ-thị-tri-thức---knowledge-graph">
+<a class="anchor" href="#%C4%91%E1%BB%93-th%E1%BB%8B-tri-th%E1%BB%A9c---knowledge-graph" aria-hidden="true"><span class="octicon octicon-link"></span></a>ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH</h1>
 
 <table>
   <tbody>
@@ -131,23 +158,27 @@ window.onload = wrap_img;
 
 <p>[ISSUES OF KG TRANSLATION]</p>
 
-<h1 id="what-are-some-graph-data-models">WHAT ARE SOME GRAPH DATA MODELS?</h1>
+<h1 id="what-are-some-graph-data-models">
+<a class="anchor" href="#what-are-some-graph-data-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>WHAT ARE SOME GRAPH DATA MODELS?</h1>
 
-<h2 id="1-giới-thiệu">1. Giới thiệu</h2>
+<h2 id="1-giới-thiệu">
+<a class="anchor" href="#1-gi%E1%BB%9Bi-thi%E1%BB%87u" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Giới thiệu</h2>
 
 <p>Hai mô hình dữ liệu đồ thị phổ biến là mô hình Resource Description Framework (RDF) và mô hình Property Graph (PG). Ngôn ngữ truy vấn cho RDF là SPARQL, và ngôn ngữ truy vấn cho mô hình Property Graph là Cypher.</p>
 
 <p>Trong chương này, chúng ta sẽ trình bày một cách tổng quan bình thường cả hai mô hình dữ liệu và cho những ví dụ truy vấn với chúng. Chúng ta xem xét chuyển đổi biểu diễn dữ liệu bằng một trong các mô hình sang biểu diễn dữ liệu bằng mô hình khác, và cũng so sánh những dữ liệu đồ thị này bằng cách dùng mối quan hệ mô hình dữ liệu thông thường.</p>
 
-<h2 id="2-resource-description-frame---khung-mô-tả-tài-nguyên">2. Resource Description Frame - Khung mô tả tài nguyên</h2>
+<h2 id="2-resource-description-frame---khung-mô-tả-tài-nguyên">
+<a class="anchor" href="#2-resource-description-frame---khung-m%C3%B4-t%E1%BA%A3-t%C3%A0i-nguy%C3%AAn" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Resource Description Frame - Khung mô tả tài nguyên</h2>
 
 <p>RDF (Resource Description Frame - Khung mô tả tài nguyên) là một khung (framework) cho việc biểu diễn thông tin (representation information) trên web. Mô hình dữ liệu RDF (RDF Data Model) và ngôn ngữ truy vấn của nó SPARQL được chuẩn hoá bởi World Wide Web Consortium</p>
 
-<h3 id="21-rdf-data-model---mô-hình-dữ-liệu-rdf">2.1 RDF Data Model - Mô hình dữ liệu RDF</h3>
+<h3 id="21-rdf-data-model---mô-hình-dữ-liệu-rdf">
+<a class="anchor" href="#21-rdf-data-model---m%C3%B4-h%C3%ACnh-d%E1%BB%AF-li%E1%BB%87u-rdf" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1 RDF Data Model - Mô hình dữ liệu RDF</h3>
 
 <p>Một bộ ba RDF, thành phân cơ sở của biểu diễn trong mô hình này, bao gồm một chủ thể (subject), một thuộc tính (predicate) và một đối tượng (object). Một tập bộ ba như vậy được gọi là đồ thị RDF (RDF Graph). Chúng ta có thể trực quan hoá một bộ ba RDF như một node và một cạnh liên kết có hướng, mà mỗi bộ ba như vậy biểu diễn một đồ thị node-edge-node (nút-cạnh-nút)</p>
 
-<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image1.png" alt="" /></p>
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image1.png" alt=""></p>
 
 <p>Có thể chia thành ba loại node:</p>
 
@@ -187,7 +218,8 @@ window.onload = wrap_img;
 
 <p>Một kho dữ liệu RDF (RDF Dataset) là một tập của nhiều đồ thị RDF (RDF Graphs) và bao gồm chính xác một đồ thị mặc định có thể để trống và không cần đặt tên và một hoặc nhiều đồ thị được đặt tên. Mỗi đồ thị được đặt tên bao gồm một IRI hoặc một nút trống thể hiện tên của nó và đồ thị RDF.</p>
 
-<h3 id="22-sparql-query-language---ngôn-ngữ-truy-vấn-sparql">2.2 SPARQL Query Language - Ngôn ngữ truy vấn SPARQL</h3>
+<h3 id="22-sparql-query-language---ngôn-ngữ-truy-vấn-sparql">
+<a class="anchor" href="#22-sparql-query-language---ng%C3%B4n-ng%E1%BB%AF-truy-v%E1%BA%A5n-sparql" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2 SPARQL Query Language - Ngôn ngữ truy vấn SPARQL</h3>
 
 <p>SPARQL (đọc là “sparkle” :v xờ pắc kơ le), viết tắt của SIMPle Protocol and RDF Query Language) là một ngôn ngữ truy vấn để truy xuất và thao tác dữ liệu được lưu trữ trong Resource Description Framework (RDF). SPARQL thể được sử dụng để thể hiện các truy vấn trên nhiều nguồn dữ liệu khác nhau, cho dù dữ liệu được lưu trữ nguyên bản dưới dạng RDF hay được xem dưới dạng RDF thông qua phần mềm trung gian. SPARQL chứa các khả năng truy vấn bắt buộc và tuỳ chọn mẫu đồ thị (graph patterns) với liên kết (conjunctions) và phi liên kết (disconjuntions) của chúng. SPARQL cũng hỗ trợ mở rộng truy vấn giá trị kiểm tra và ràng buộc bởi nguồn đồ thị RDF. Kết quả của truy vấn SPARQL có thể là các tập hợp hoặc những đồ thị RDF (RDF Graphs)</p>
 
@@ -271,23 +303,26 @@ window.onload = wrap_img;
 
 <p>Các câu truy vấn SPARQL có rất nhiều dạng. Dạng mệnh đề SELECT mà chúng ta xem xét đến bây giờ trả về những biến ràng buộc. Dạng mệnh đề CONSTRUCT có thể được dùng trong khởi tạo những kết quả mà định nghĩa một đồ thị RDF (RDF Graph). Những câu truy vấn cũng có thể chỉ định nhiều hơn một mẫu đồ thị (graph pattern) mà tất cả chúng hoặc một vài trong chúng phải khớp với dữ liệu RDF. Những kết quả truy vấn cũng có thể được xử lý thêm bằng cách cung cấp một cách trực tiếp các lệnh để sắp xếp chúng, loại bỏ trùng lặp kết quả, hoặc giới hạn số lượng các kết quả được trả về.</p>
 
-<h2 id="3-property-graphs---đồ-thị-thuộc-tính">3. Property Graphs - Đồ thị thuộc tính</h2>
+<h2 id="3-property-graphs---đồ-thị-thuộc-tính">
+<a class="anchor" href="#3-property-graphs---%C4%91%E1%BB%93-th%E1%BB%8B-thu%E1%BB%99c-t%C3%ADnh" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Property Graphs - Đồ thị thuộc tính</h2>
 
 <p>Mô hình dữ liệu thuộc tính được sử dụng bởi nhiều hệ thống cơ sở dữ liệu đồ thị. Không giống như RDF được thúc đẩy bởi nhu cầu mô hình hoá thông tin dữ liệu trên web, hệ thống sơ cở dữ liệu xử lý dữ liệu đồ thị tổng quát. Những hệ thống cơ sở dữ liệu đồ thị (Graph Database Systems) tách biệt bản thân chúng với cơ sở dữ liệu quan hệ truyền thống (Traditional Relational Databases) với sự phụ rất ít vào một lược đồ được định nghĩa từ trước, và tối ưu sự vận hành nhờ vào duyệt đồ thị (Graph Traversals). Trong mục này, chúng ta sẽ xem xét mô hình dữ liệu đồ thị thuộc tính và ngôn ngữ Cypher được dùng để truy vấn nó.</p>
 
-<h3 id="31-mô-hình-dữ-liệu-đồ-thị-thuộc-tính-property-graph-data-model">3.1 Mô hình dữ liệu đồ thị thuộc tính (Property Graph Data Model)</h3>
+<h3 id="31-mô-hình-dữ-liệu-đồ-thị-thuộc-tính-property-graph-data-model">
+<a class="anchor" href="#31-m%C3%B4-h%C3%ACnh-d%E1%BB%AF-li%E1%BB%87u-%C4%91%E1%BB%93-th%E1%BB%8B-thu%E1%BB%99c-t%C3%ADnh-property-graph-data-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.1 Mô hình dữ liệu đồ thị thuộc tính (Property Graph Data Model)</h3>
 
 <p>Một mô hình dữ liệu đồ thị thuộc tính (Property Graph Data Model) bao gồm các nút (node), những mối quan hệ (relationships) và những thuộc tính (properties). Mỗi một nút có một nhãn và một tập các thuộc tính dưới dạng bất kỳ những cặp key-value. Các key là những chuỗi (string) và các value là kiểu dữ liệu bất kỳ. Một quan hệ là một cạnh liên kết có hướng giữa hai node (nút), có một nhãn và có thể có một tập các thuộc tính.</p>
 
 <p>Trong đồ thị thuộc tính sau đây art và bea là hai node. Node cho bea có hai thuộc tính: age và based_near. Hai nút (node) được nối bằng một cạnh liên kết với nhãn là knows. Cạnh liên kết này có thuộc tính since chỉ năm mà art và bea quen biết nhau</p>
 
-<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image2.png" alt="" /></p>
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image2.png" alt=""></p>
 
 <p>Trong lúc định nghĩa một thuộc mô hình dữ liệu đồ thị thuộc tính, chúng ta phải quyết định những nút (nodes), những cạnh liên kết (edges) và những thuộc tính (properties). Ví dụ như chúng ta có thể hỏi tại sao không biểu diễn một thành phố như một nút, và khởi tạo một nhãn based_near giữa một người (a person) và một thành phố (a city) thay vì tạo ra một thuộc tính của một nút biểu diễn một người. Một cách tổng quát, bất kỳ giá trị nào có liên hệ với nhiều nút (nodes) khác trong một đồ thị sao cho có yêu cầu ứng dụng để duyệt trên các mối quan quan hệ đó một cách hiệu quả, hoặc chúng cần liên kết các thuộc tính bổ sung với cách nó liên hệ với những nút khác, bản thân nó nên được biểu diẽn như một nút.</p>
 
-<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image3.png" alt="" /></p>
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image3.png" alt=""></p>
 
-<h3 id="32-cypher-query-language">3.2 Cypher Query Language</h3>
+<h3 id="32-cypher-query-language">
+<a class="anchor" href="#32-cypher-query-language" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.2 Cypher Query Language</h3>
 
 <p>Cypher là một ngôn ngữ dùng trong truy vấn dữ liệu được biểu diễn trong một mô hình dữ liệu đồ thị thuộc tính. Những khái niệm thiết kế từ Cypher đang được xem xét để trở thành một chuẩn ISO cho một ngôn ngữ truy vấn đồ thị. Ngoài việc truy vấn, Cypher cũng có thể được sử dụng để khởi tạo (create), cập nhật (update) và loại bỏ (delete) dữ liệu từ một cơ sở dữ liệu đồ thị. Trong phần này, chúng ta sẽ điểm qua một vài khả năng truy vấn của Cypher</p>
 
@@ -313,11 +348,13 @@ window.onload = wrap_img;
 
 <p>Thông qua mệnh đề WHERE, có thể chỉ định nhiều ràng buộc bộ lọc giống như các mẫu có thể sử dụng để giới hạn các kết quả truy vấn. Hơn nữa,Cypher cung cấp cấu trúc ngôn ngữ cho việc đếm các kết quả (counting results), gom nhóm dữ liệu bởi những giá trị (grouping data by values), tìm giá trị cực đại/ cực tiểu (minimum/ maximum values) và một số toán tử toán học khác.</p>
 
-<h2 id="4-comparison-of-data-models---so-sánh-các-mô-hình-dữ-liệu">4. Comparison of Data Models - So sánh các mô hình dữ liệu</h2>
+<h2 id="4-comparison-of-data-models---so-sánh-các-mô-hình-dữ-liệu">
+<a class="anchor" href="#4-comparison-of-data-models---so-s%C3%A1nh-c%C3%A1c-m%C3%B4-h%C3%ACnh-d%E1%BB%AF-li%E1%BB%87u" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Comparison of Data Models - So sánh các mô hình dữ liệu</h2>
 
 <p>Trong mục này, chúng ta sẽ bắt đầu so sánh RDF và mô hình dữ liệu đồ thị thuộc tính. Chúng ta cũng sẽ so sánh cả hai thứ này với mô hình dữ liệu quan hệ.</p>
 
-<h3 id="41-comparison-of-rdf-and-property-graph-data-models">4.1 Comparison of RDF and Property Graph Data Models</h3>
+<h3 id="41-comparison-of-rdf-and-property-graph-data-models">
+<a class="anchor" href="#41-comparison-of-rdf-and-property-graph-data-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1 Comparison of RDF and Property Graph Data Models</h3>
 
 <p>Ngoài các đặc trưng của RDF được đề cập trong những mục trước, nó có nhiều tầng (layers) bổ sung, ví dụ như lược đồ RDF, Web Ontology Language (OWL),… Trong phần này, chúng ta không cần phải đề cập đến những đặc trưng cao cấp này.</p>
 
@@ -368,13 +405,14 @@ window.onload = wrap_img;
 
 <p>Ngoài ra để chuyển đổi dữ liệu giữa các mô hình RDF và đồ thị thuộc tính, chúng ta cũng quan tâm đến chuyển đổi hình thức cú pháp của dữ liệu và các câu truy vấn. Với mô hình dữ đồ thị thuộc tính, không có một chuẩn cú pháp cho những biểu thức, do vậy một trình dịch tùy chỉnh cần được viết cho định dạng mà người đó đang làm việc với. Một lần dịch lược đồ là cố định giữa hai mô hình, nên dịch giữa SPARQL và Cypher cũng đơn giản.</p>
 
-<h3 id="42-comparison-of-graph-models-and-relational-data-model---so-sánh-mô-hình-đồ-thị-và-mô-hình-dữ-liệu-quan-hệ">4.2 Comparison of Graph Models and Relational Data Model - So sánh mô hình đồ thị và mô hình dữ liệu quan hệ</h3>
+<h3 id="42-comparison-of-graph-models-and-relational-data-model---so-sánh-mô-hình-đồ-thị-và-mô-hình-dữ-liệu-quan-hệ">
+<a class="anchor" href="#42-comparison-of-graph-models-and-relational-data-model---so-s%C3%A1nh-m%C3%B4-h%C3%ACnh-%C4%91%E1%BB%93-th%E1%BB%8B-v%C3%A0-m%C3%B4-h%C3%ACnh-d%E1%BB%AF-li%E1%BB%87u-quan-h%E1%BB%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2 Comparison of Graph Models and Relational Data Model - So sánh mô hình đồ thị và mô hình dữ liệu quan hệ</h3>
 
 <p>Chúng ta có thể định nghĩa một phép dịch và và từ dữ liệu được thể hiện bằng cách sử dụng mô hình dữ liệu quan hệ sang dữ liệu được thể hiện bằng cách sử dụng mô hình RDF và mô hình đồ thị thuộc tính. Một số ý kiến rằng các mô hình đồ thị thì dễ dàng hiểu hơn đối với con người và các ngôn ngữ truy vấn đồ thị thì gọn hơn với những những truy vấn xác định. Về nguyên tắc, chúng ta có thể cài đặt một một giao diện người dùng để trực quan hoá lược đồ quan hệ, và cài đặt trình biên dịch truy vấn mà có thể ánh xạ câu truy vấn được viết bằng ngôn ngữ truy vấn đồ thị thành một dạng tương đương mà có thể thực hiện trên những bảng quan hệ. Nếu một ứng dụng yêu cầu điều hướng mối quan hệ, một cơ sở dữ liệu đồ thị có những cạnh liên kết có lợi thế vì nó tối ưu được trong việc duyệt đồ thị. Cho phần còn lại của mục này, chúng ta xem xét một ví dụ cụ thể xem cách mà những câu truy vấn đồ thị nhỏ gọn hơn so với những câu truy vấn quan hệ tương ứng, và kết luận bằng cách đề cặp một số hệ thông quan hệ cố gắng hỗ trợ xử lý đồ thị</p>
 
 <p>Để hiểu sự tương phản giữa truy vấn đồ thị và truy vấn quan hệ, chúng ta xem xét một ví dụ đơn giản trong đó chúng ta có 3 bảng: một bảng Employee, một bảng Department và một bảng kết Employee_Department. Một nhân viên (employee) có thể được liên kết với nhiều phòng ban (Department) vì chúng được lưu trữ trong các bảng riêng biệt. Hai bảng liên hệ bằng một bảng kết gồm các khoá ngoại employee id và department id.</p>
 
-<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image4.png" alt="" /></p>
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image4.png" alt=""></p>
 
 <p>Giả định rằng chúng ta muốn xuất ra danh sách những nhân viên thuộc phòng ban IT (có thể có thể nói là vua của các phòng ban :)) Câu truy vấn SQL thực hiện nhiệm vụ này đầu tiên cần kết bảng employee và bảng department và sau đó lọc ra những kết quả trên tên của phòng ban (department)</p>
 
@@ -408,7 +446,7 @@ window.onload = wrap_img;
 
 <p>Nếu chúng ta muốn biểu diễn thông tin tương tự bằng cách sử dụng một mô hình dữ liệu đồ thị, chúng ta sẽ cần một node cho department và employee. Employee ssn và department name sẽ là những thuộc tính của node. Bảng Employee_Department sẽ được nắm bắt bằng một mối quan hệ trong biểu diễn đồ thị thuộc tính. Nếu bảng bảng Employee_Department có những thuộc tính bổ sung, chúng sẽ được biểu diễn như thuộc tính cạnh liên kết trong mô hình dữ liệu đồ thị. Một mẫu node với một thuộc tính đồ thị như sau:</p>
 
-<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image5.png" alt="" /></p>
+<p><img src="https://nhutnamhcmus.github.io/lenux-notebooks/assets/img/2021-06-26-what-are-some-knowledge-graph-data-models/media/image5.png" alt=""></p>
 
 <p>Chúng ta có thể truy vấn dữ liệu bằng cách sử dụng câu truy vấn Cypher sau đây</p>
 
@@ -435,7 +473,8 @@ window.onload = wrap_img;
 
 <p>Gần đây, có nhiều hệ thống biểu diễn dữ liệu quan hệ theo cách không có lược đồ bằng cách biểu diễn mỗi thuộc tính nút dưới dạng bộ ba trong một bảng và mỗi thuộc tính cạnh dưới dạng bốn bộ trong bảng thứ hai. Những hệ thống như vậy, cung cấp một bộ lập kế hoạch truy vấn cho phép truy vấn bằng một ngôn ngữ giống Cypher mà có thể tính toán hiệu quản qua hai bảng quan hệ. Những hệ thống như thế có khả năng tận dụng công nghệ quan hệ hiện có và cũng có thể thực hiện tối ưu hóa khi một số dữ liệu kế thừa nằm trong bảng quan hệ truyền thống.</p>
 
-<h2 id="5-limitations-of-a-graph-data-model---giới-hạn-của-một-mô-hình-dữ-liệu-đồ-thị">5. Limitations of a Graph Data Model - Giới hạn của một mô hình dữ liệu đồ thị</h2>
+<h2 id="5-limitations-of-a-graph-data-model---giới-hạn-của-một-mô-hình-dữ-liệu-đồ-thị">
+<a class="anchor" href="#5-limitations-of-a-graph-data-model---gi%E1%BB%9Bi-h%E1%BA%A1n-c%E1%BB%A7a-m%E1%BB%99t-m%C3%B4-h%C3%ACnh-d%E1%BB%AF-li%E1%BB%87u-%C4%91%E1%BB%93-th%E1%BB%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. Limitations of a Graph Data Model - Giới hạn của một mô hình dữ liệu đồ thị</h2>
 
 <p>Một mô hình dữ liệu đồ thị không hẳn là một lựa chọn thích hợp nhất khi ứng dụng bao gồm chủ yếu là dữ liệu số, và chỉ dựa vào mối quan hệ nhị phân. Ví dụ như, mô hình quan hệ thì hiệu quả hơn trong việc nắm bắt những dữ liệu chuỗi thời gian (time series data) giống như sự phát triển dân số của một quốc gia. Mặc dù chúng ta có thể biểu diễn những dữ liệu như thế bằng cách sử dụng một đồ thị, nhưng kết quả trong một số lượng lớp bộ ba mà không nhất thiết mang lại cho chúng ta lợi thế về sự hiểu biết khái niệm tốt hơn và / hoặc hiệu suất truy vấn nhanh hơn thông qua duyệt đồ thị</p>
 
@@ -447,7 +486,15 @@ window.onload = wrap_img;
 
 <p>Bài giảng gốc: <a href="">https://web.stanford.edu/class/cs520/2020/notes/What_Are_Graph_Data_Models.html</a></p>
 
-  </div><a class="u-url" href="/lenux-notebooks/2021/06/26/what-are-some-knowledge-graph-data-models.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nhutnamhcmus/lenux-notebooks"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/lenux-notebooks/2021/06/26/what-are-some-knowledge-graph-data-models.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
