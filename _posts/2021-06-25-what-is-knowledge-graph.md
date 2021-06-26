@@ -27,7 +27,7 @@ Mọi vấn đề về dịch thuật, thuật ngữ xin để lại comment ho�
 
 ## 1\. Giới thiệu
 
-Đồ thị tri thức là trừu tượng rất hợp lý cho việc tổ chức tri thức có cấu trúc của thế giới trên Internet, và như một cách tích hợp rút trích thông tin từ nhiều nguồn dữ liệu. Đồ thị tri thức cũng đóng vai trò trung tâm trong Machine Learning (Học Máy) như một phương pháp kết hợp tri thức nhân loại, như một mục tiêu biểu diễn tri thức (Knowledge Representation) với những tri thức đã được rút trích, và giải thích những gì học được.
+Đồ thị tri thức là một cấu trúc trừu tượng rất hợp lý, hấp dẫn cho việc tổ chức tri thức có cấu trúc của thế giới trên Internet, và như một cách tích hợp rút trích thông tin từ nhiều nguồn dữ liệu. Đồ thị tri thức cũng đóng vai trò trung tâm trong Machine Learning (Học Máy) như một phương pháp kết hợp tri thức nhân loại, như một mục tiêu biểu diễn tri thức (Knowledge Representation) với những tri thức đã được rút trích, và giải thích những gì học được.
 
 Mục đích của chúng ta ở đây là để giải thích những thuật ngữ (terminology), khái niệm (concepts) và cách sử dụng của Đồ thị tri thức trong một cách hiểu đơn giản. Chúng ta không tổ chức một khảo sát toàn diện về những công trình quá khứ và hiện tại về đề tài Đồ thị tri thức.
 
@@ -39,7 +39,7 @@ Một Đồ thị tri thức (Knowledge Graph) là một đồ thị hữu hư�
 
 Một đồ thị hữu hướng được gán nhãn (DLG) bao gồm các nút (nodes), cạnh liên kết (edges) và nhãn (labels). Bất kỳ thứ gì đều có thể xem là một nút (node), ví dụ như con người, công ty, máy tính, … . Một cạnh liên kết (edges) kết nối một cặp nút (nodes) và thể hiện mối quan hệ được quan giữa chúng, ví dụ như mối quan hệ tình bạn giữa hai người, mối quan hệ khách hàng giữa một công ty và một người, hoặc một kết nối mạng kết nối hai máy tính. Nhãn thể hiện ý nghĩa của mối quan hệ đó, ví dụ: mối quan hệ tình bạn giữa hai người.
 
-Tổng quát hơn, cho một tập các nút N, và một tập các nhãn L, một đồ thị tri thức là một tập hợp con của tích hữu hướng N x L x N. Mỗi thành phần trong tập này được gọi là một bộ ba và có thể trực quan như sau:
+Tổng quát hơn, cho một tập các nút N, và một tập các nhãn L, một đồ thị tri thức là một tập hợp con của tích hữu hướng $N \\times L \\times N$. Mỗi thành phần trong tập này được gọi là một bộ ba và có thể trực quan như sau:
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowledge-graph/media/image1.png)
 
@@ -47,7 +47,7 @@ Biểu diễn đồ thị hữu hướng thường được sử dụng trong nh
 
 Nhiều tính toán dựa trên đồ thị có thể điều chỉnh thành dạng điều hướng. Ví dụ như, trong một đồ thị tri thưc tình bạn, để tính toán bạn bè của một người bạn của một người A, chúng ta có thể điều hướng đồ thị tri thức từ A đến tất cả các node B mà liên kết với nó bằng nhãn quan hệ bạn, và sau đó, đệ quy đến tất cả node C liên kết đến B bởi mối quan hệ bạn.
 
-Một đường đi (Path) trong một đồ thị G là một chuỗi các node (v\_1, v\_2, …, v\_n) trong đó bất kỳ một node i nào thuộc N với 1 \\leq i \< n, tồn tại một cạnh liên kết từ v\_i đến v\_{i+1}.
+Một đường đi (Path) trong một đồ thị G là một chuỗi các node $(v\_1, v\_2, …, v\_n)$ trong đó bất kỳ một node i nào thuộc N với $1 \\leq i \< n$, tồn tại một cạnh liên kết từ $v\_i$ đến $v\_{i+1}$.
 
 Một đường đi đơn (SIMPle Path) là một đường đi mà không có node nào lặp lai
 
