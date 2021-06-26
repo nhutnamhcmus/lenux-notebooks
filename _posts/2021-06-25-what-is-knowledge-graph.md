@@ -41,7 +41,7 @@ Một Đồ thị tri thức (Knowledge Graph) là một đồ thị hữu hư�
 
 Một đồ thị hữu hướng được gán nhãn (DLG) bao gồm các nút (nodes), cạnh liên kết (edges) và nhãn (labels). Bất kỳ thứ gì đều có thể xem là một nút (node), ví dụ như con người, công ty, máy tính, … . Một cạnh liên kết (edges) kết nối một cặp nút (nodes) và thể hiện mối quan hệ được quan giữa chúng, ví dụ như mối quan hệ tình bạn giữa hai người, mối quan hệ khách hàng giữa một công ty và một người, hoặc một kết nối mạng kết nối hai máy tính. Nhãn thể hiện ý nghĩa của mối quan hệ đó, ví dụ: mối quan hệ tình bạn giữa hai người.
 
-Tổng quát hơn, cho một tập các nút $N$, và một tập các nhãn $L4, một đồ thị tri thức là một tập hợp con của tích hữu hướng $N \\times L \\times N$. Mỗi thành phần trong tập này được gọi là một bộ ba và có thể trực quan như sau:
+Tổng quát hơn, cho một tập các nút $N$, và một tập các nhãn $L$, một đồ thị tri thức là một tập hợp con của tích hữu hướng $N \\times L \\times N$. Mỗi thành phần trong tập này được gọi là một bộ ba và có thể trực quan như sau:
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/img/2021-06-25-what-is-knowledge-graph/media/image1.png)
 
