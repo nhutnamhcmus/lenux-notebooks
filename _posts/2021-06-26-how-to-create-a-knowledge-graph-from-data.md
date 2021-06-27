@@ -3,7 +3,7 @@ layout: post
 toc: true
 comments: true
 ---
-# ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH
+1.  **ĐỒ THỊ TRI THỨC - KNOWLEDGE GRAPH**
 
 Đây là bản dịch từ Course CS520: Knowledge Graphs | Data Models, Knowledge Acquisition, Inference and Applications
 
@@ -17,7 +17,7 @@ Mọi thông tin về những chủ đề được note lại có thể tìm th�
 
 https://web.stanford.edu/class/cs520/2020/notes/Table\_Of\_Contents.html
 
-Video của các buổi seminar cũng được công khai trên địa chỉ Youtube:
+Video của các buổi seminar trên địa chỉ Youtube:
 
 https://www.youtube.com/playlist?list=PLDhh0lALedc5paY4N3NRZ3j\_ui9foL7Qc
 
@@ -26,6 +26,8 @@ Mọi vấn đề về dịch thuật, thuật ngữ xin để lại comment ho�
 \[ISSUES OF KG TRANSLATION\]
 
 # HOW TO CREATE A KNOWLEDGE GRAPH FROM DATA
+
+**LÀM THẾ NÀO ĐỂ KHỞI TẠO MỘT ĐỒ THỊ TRI THỨC TỪ DỮ LIỆU**
 
 ## 1\. Giới thiệu
 
@@ -165,4 +167,4 @@ Bài tập:
 
 …Sẽ cập nhật sau…
 
-Bài giảng gốc: [https://web.stanford.edu/class/cs520/2020/notes/How\_To\_Create\_A\_Knowledge\_Graph\_From\_Data.html]()
+Bài giảng gốc: https://web.stanford.edu/class/cs520/2020/notes/How\_To\_Create\_A\_Knowledge\_Graph\_From\_Data.html
