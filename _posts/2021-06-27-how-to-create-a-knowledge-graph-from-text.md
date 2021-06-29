@@ -221,30 +221,3 @@ Với những lý do này, phân giải thực thể (entity resolution) là m�
 ...Sẽ cập nhật sau…
 
 Bài giảng gốc: https://web.stanford.edu/class/cs520/2020/notes/How\_To\_Create\_A\_Knowledge\_Graph\_From\_Text.html
- thêm vào. Nhưng với sự giúp đỡ của việc định nghĩa nó bằng cách dùng một luật, một rule engine có thể tính toán xung đột của quan hệ quan tâm đến coi. Trong một vài trường hợp, chúng ta có thể quan đến việc thêm vào những giá trị đã được tính toán của quan hệ coi vào đồ thị tri thức của chúng ta. Vì coi là quan hệ ba ngôi, chúng ta sẽ cần phải tái tổ chức nó. Vì tái tổ chức yêu cầu thêm vào những đối tượng mới trong đồ thị, chúng ta có thể xác định chúng bằng cách sử dụng một quy luật tồn tại được cho bên dưới:
-
-|                                                                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------- |
-| ∃c conflict\_of(c,X) & conflict\_reason(c,Y) & conflict\_with(c,Z) :- involved\_in(X,Y) & about(Y,P) & funded\_by(X,Z) & has\_interest(Y,P) |
-
-Nói chung, những luật tồn tại cần thiết bất cứ khi nào chúng ta cần phải tạo ra những đối tượng mới trong đồ thị tri thức. Tái tổ chức quan hệ là một tình huống cụ thể. Đôi khi, chúng ta có thể cần tạo ra những đối tượng mới thoã mãn những ràng buộc xác dịnh (certain constraints). Ví dụ như, xem xét một ràng buộc: mọi con người phải có hai cha me. Với một người, cha mẹ có thể không cần biết, và nếu chúng ta muốn đồ thị tri thức của chúng ta tiếp tục phù hợp với ràng buộc này, chúng ta phải thêm vào hai đối tượng biểu diễn cha me như một người. Vì điều này có thể dẫn đến vô số các đối tượng mới, nên điển hình là đặt giới hạn về cách các đối tượng mới được tạo ra.
-
-#### 3.2.2 Approach for Rule-based Reasoning - Phương pháp tiếp cận cho suy diễn dựa trên luật
-
-Để hỗ trợ suy luận dựa trên luật trên đồ thị tri thức, chúng ta thường dùng một rule engine với dữ liệu trên đồ thị tri thức. Chúng ta đề cập ở đây một vài chiến lược suy luận khác nhau được sử dụng bởi những rule engine.
-
-Trong chiến lược bottom-up, được gọi là Chase, chúng ta áp dụng tất cả những luật dựa trên đồ thị tri thức, và thêm vào một số dữ kiện mới cho nó cho đến khi chúng ta không cần phải khai báo những dữ kiện mới nữa. Như đã nói đến ở phần trước, chúng ta cần đưa ra những chiến lược dừng để đối phó với những tình huống mà những suy luật thêm vào không cung cấp những thông tin hữu ích. Khi chúng ta tính toán xong Chase, suy luận có thể được thực hiện bằng những phương thức truy vấn truyền thống.
-
-Trong xử lý truy vấn top-down, chúng ta bắt đầu từ câu truy vấn sẽ được trả lời, và áp dụng những luật cơ bản nhất. Một chiến lược top-down cần một tương tác chặt chẽ giữa engine truy vấn của đồ thị tri thức với luật đánh giá. Với tiếp cận này, cách tiếp cận này có thể sử dụng ít không gian hơn rất nhiều so với chiến lược lập luận bottom-up
-
-Những luật engine có độ hiệu quả cao và có thể mở rộng sử dụng những truy vấn tối ưu (query optimization) và những kỹ thuật ghi lại (rewriting techniques). Chúng cũng dựa trên việc nắm bắt các chiến lược để đạt được hiệu quả thực thi.
-
-## 4\. Tổng kết
-
-Trong chương này, chúng ta đã đề cập những thuật toán suy diễn khác nhau cho đồ thị tri thức. Những thuật toán đồ thị như tìm kiếm đường đi, xác định công đồng, … được hỗ trợ bởi hầu hết các graph engine trong thực tế. Graph engine thường giới hạn hỗ trợ cho ontology và rule-based reasoning. Các engine đồ thị tri thức (Knowledge Graph Engines) hiện đang bắt đầu trở nên sẵn sàng hỗ trợ cả các thuật toán đồ thị tổng quát cũng như ontology và rule-based reasoning
-
-**Bài tập:**
-
-...Sẽ cập nhật sau…
-
-Bài giảng gốc: https://web.stanford.edu/class/cs520/2020/notes/What\_Are\_Some\_Inference\_Algorithms.html
